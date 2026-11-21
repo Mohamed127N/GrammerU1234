@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة إتقان اللغة الإنجليزية | الدليل التفاعلي الشامل</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cairo & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        arabic: ['Cairo', 'sans-serif'],
+                        english: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        .en {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+            unicode-bidi: isolate;
+        }
+        .en-block {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+            text-align: left;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(156, 163, 175, 0.5);
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(107, 114, 128, 0.8);
+        }
+        .card-hover {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+        /* Playful Highlight Badges for Skills Sample Paragraphs */
+        .hl-neon-yellow {
+            background-color: #fef08a;
+            color: #1e293b;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-weight: 600;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            border-bottom: 2px solid #eab308;
+        }
+        .hl-hot-pink {
+            background-color: #fbcfe8;
+            color: #831843;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-weight: 600;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            border-bottom: 2px solid #ec4899;
+        }
+        .hl-mint-green {
+            background-color: #a7f3d0;
+            color: #064e3b;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-weight: 600;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            border-bottom: 2px solid #10b981;
+        }
+        .hl-electric-blue {
+            background-color: #bae6fd;
+            color: #0c4a6e;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-weight: 600;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            border-bottom: 2px solid #0284c7;
+        }
+        .hl-playful-purple {
+            background-color: #e9d5ff;
+            color: #4c1d95;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-weight: 600;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            border-bottom: 2px solid #9333ea;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Mobile Header -->
+    <header class="lg:hidden sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <button id="mobile-menu-btn" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-50 dark:hover:bg-slate-700 transition" aria-label="القائمة">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white font-bold shadow-sm">
+                    <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                </div>
+                <span class="font-extrabold text-base tracking-tight">إتقان الإنجليزية</span>
+            </div>
+        </div>
+        <button id="theme-toggle-mobile" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200" aria-label="تبديل المظهر">
+            <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
+            <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-amber-400"></i>
+        </button>
+    </header>
+
+    <!-- Backdrop for Mobile Sidebar -->
+    <div id="sidebar-backdrop" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-40 hidden lg:hidden transition-opacity"></div>
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="fixed lg:sticky top-0 right-0 z-50 h-screen w-80 bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 flex flex-col transition-transform duration-300 translate-x-full lg:translate-x-0 shadow-2xl lg:shadow-none">
+            <!-- Brand Logo -->
+            <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 via-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+                        <i data-lucide="book-open-check" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-extrabold text-lg leading-tight text-slate-900 dark:text-white">أكاديمية الإتقان</h1>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">المنهج التفاعلي الشامل (Units 1–4)</p>
+                    </div>
+                </div>
+                <button id="close-sidebar-btn" class="lg:hidden p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Search Input inside Sidebar -->
+            <div class="p-4 border-b border-slate-100 dark:border-slate-800/60">
+                <div class="relative">
+                    <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute right-3.5 top-1/2 -translate-y-1/2"></i>
+                    <input type="text" id="sidebar-search" placeholder="ابحث عن قاعدة، مهارة، زمن..." class="w-full bg-slate-100 dark:bg-slate-800/80 text-sm rounded-xl pr-10 pl-3 py-2.5 border border-transparent focus:border-brand-500 focus:bg-white dark:focus:bg-slate-900 focus:outline-none transition">
+                </div>
+            </div>
+
+            <!-- Progress Card -->
+            <div class="px-4 py-3 bg-brand-50/70 dark:bg-brand-900/20 border-b border-brand-100 dark:border-brand-900/30">
+                <div class="flex items-center justify-between text-xs font-bold mb-1.5">
+                    <span class="text-brand-700 dark:text-brand-300 flex items-center gap-1.5">
+                        <i data-lucide="trophy" class="w-3.5 h-3.5 text-amber-500"></i>
+                        تقدمك في التدريبات
+                    </span>
+                    <span id="sidebar-progress-text" class="text-brand-700 dark:text-brand-300">0%</span>
+                </div>
+                <div class="w-full h-2 bg-brand-200/70 dark:bg-slate-800 rounded-full overflow-hidden">
+                    <div id="sidebar-progress-bar" class="h-full bg-gradient-to-l from-brand-600 to-indigo-500 rounded-full transition-all duration-500" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav id="sidebar-nav" class="flex-1 overflow-y-auto p-3 space-y-1.5">
+                <!-- Populated dynamically via JS -->
+            </nav>
+
+            <!-- Footer Controls -->
+            <div class="p-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/50">
+                <button id="theme-toggle-desktop" class="flex items-center gap-2 text-xs font-semibold px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 transition shadow-sm">
+                    <i data-lucide="moon" class="w-4 h-4 dark:hidden text-indigo-600"></i>
+                    <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+                    <span class="dark:hidden">الوضع الليلي</span>
+                    <span class="hidden dark:inline">الوضع النهاري</span>
+                </button>
+                <button id="reset-progress-btn" class="text-xs font-semibold text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/50 px-2.5 py-2 rounded-xl transition" title="إعادة ضبط الإجابات">
+                    إعادة ضبط
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 min-w-0 max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 py-6 lg:py-10">
+            <!-- Top Breadcrumb & Quick Actions -->
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-200 dark:border-slate-800">
+                <div id="breadcrumb" class="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-500 dark:text-slate-400">
+                    <!-- Dynamic Breadcrumb -->
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="prev-lesson-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500 disabled:opacity-40 disabled:pointer-events-none transition shadow-sm">
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        السابق
+                    </button>
+                    <button id="next-lesson-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-brand-600 text-white hover:bg-brand-700 disabled:opacity-40 disabled:pointer-events-none transition shadow-sm">
+                        التالي
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dynamic Lesson / View Container -->
+            <div id="main-content" class="animate-fade-in">
+                <!-- Content rendered here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification Container (Replaces alert) -->
+    <div id="toast-container" class="fixed bottom-5 left-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <script>
+        // ============================================================================
+        // 1. CURRICULUM DATA (Preserved Completely + Expanded to 10 MCQs & 3 Essays/Lesson + Color-Coded Sample Paragraphs)
+        // ============================================================================
+        const CURRICULUM = [
+            {
+                id: 'dashboard',
+                unit: 'نظرة عامة',
+                badge: 'الرئيسية',
+                title: 'لوحة القيادة وخريطة المنهج',
+                enTitle: 'Curriculum Dashboard & Overview',
+                icon: 'layout-dashboard',
+                color: 'indigo',
+                type: 'dashboard'
+            },
+            // ==================== UNIT 1 ====================
+            {
+                id: 'u1-participles',
+                unit: 'الوحدة الأولى: Living well in a complex world',
+                badge: '1.1 Grammar',
+                title: 'العبارات الوصفية (اسم الفاعل واسم المفعول)',
+                enTitle: 'Participial Phrases (Present, Past & Perfect)',
+                icon: 'layers',
+                color: 'blue',
+                summary: 'تبدأ العبارة الوصفية بفعل ينتهي بـ (ing-) أو تصريف ثالث (P.P.) لإضافة تفاصيل للجملة الرئيسية ودمج جملتين بوضوح بشرط اتحاد الفاعل.',
+                rules: [
+                    {
+                        heading: '1. اسم الفاعل (Present Participle: V + ing)',
+                        explanation: 'يُستخدم عندما يكون فاعل الجملة هو الذي يقوم بالفعل (مبني للمعلوم Active)، ويشترط أن يكون فاعل الجملتين واحداً.',
+                        points: [
+                            { label: 'بدلاً من ضمير الوصل والفعل (معلوم)', en: 'Students who work hard usually succeed. ➔ Students working hard usually succeed.' },
+                            { label: 'بدلاً من روابط السبب (because / as / since)', en: 'Because Ahmed felt tired, he went to bed early. ➔ Feeling tired, Ahmed went to bed early.' },
+                            { label: 'بدلاً من روابط الزمن (while / when)', en: 'While he was walking home, he saw an accident. ➔ Walking home, he saw an accident.' },
+                            { label: 'بدلاً من (If) الشرطية في المبني للمعلوم', en: 'If you take this medicine, you will recover quickly. ➔ Taking this medicine, you will recover quickly.' },
+                            { label: 'لإيضاح النتيجة بعد الجملة بدلاً من (and)', en: 'The storm destroyed many houses, leaving many people homeless.' },
+                            { label: 'النفي بوضع (Not) قبل (V-ing) مباشرة', en: 'Not wanting to miss the bus, they ran to the bus stop.' }
+                        ]
+                    },
+                    {
+                        heading: '2. اسم المفعول (Past Participle: P.P.)',
+                        explanation: 'يُستخدم التصريف الثالث (P.P.) عندما يكون الفعل مبنياً للمجهول (Passive) أي أن الفاعل وقع عليه الفعل.',
+                        points: [
+                            { label: 'بدلاً من ضمير الوصل + v. to be (مجهول)', en: 'The car which was damaged in the accident was repaired. ➔ The car damaged in the accident was repaired.' },
+                            { label: 'في أول الجملة بدلاً من (If) في المبني للمجهول', en: 'If this medicine is taken three times a day, it will have a good effect. ➔ Taken three times a day, this medicine will have a good effect.' },
+                            { label: 'بدلاً من (Because / Since / As) في المبني للمجهول', en: 'Because she was bitten by a scorpion, she was carried to hospital. ➔ Bitten by a scorpion, she was carried to hospital.' }
+                        ]
+                    },
+                    {
+                        heading: '3. اسم الفاعل التام (Perfect Participle: Having + P.P.)',
+                        explanation: 'يُستخدم بدلاً من (After) لإبراز أن الحدث الأول تم واكتمل تماماً قبل وقوع الحدث الثاني.',
+                        points: [
+                            { label: 'المبني للمعلوم (Having + P.P.)', en: 'After he had finished his homework, he watched TV. ➔ Having finished his homework, he watched TV.' },
+                            { label: 'المبني للمجهول (Having been + P.P.)', en: 'After the house had been cleaned, it was decorated. ➔ Having been cleaned, the house was decorated.' },
+                            { label: 'النفي (Not having + P.P.)', en: 'Because he had not studied well, he failed. ➔ Not having studied well, he failed.' }
+                        ]
+                    }
+                ],
+                warnings: [
+                    'خطأ شائع (Dangling Participle): لا يُستخدم اسم الفاعل إذا اختلف فاعل الجملتين: (✗) Walking down the street, the trees looked beautiful. ➔ (✓) Walking down the street, I saw beautiful trees.',
+                    'فرّق بين المعلوم والمجهول: (✓) The letter sent yesterday arrived today (الخطاب أُرسل). (✓) The boy playing football is my brother (الولد يلعب).'
+                ],
+                quizzes: [
+                    { q: '______ hard every day, Marwan improved his English-speaking skills quickly.', options: ['Studying', 'Studied', 'To study', 'Study'], answer: 0, exp: 'الفاعل Marwan هو من يقوم بالمذاكرة (مبني للمعلوم)، فنستخدم اسم الفاعل Studying.' },
+                    { q: 'The car ______ in the accident was repaired last month.', options: ['damaging', 'damaged', 'was damaged', 'which damaged'], answer: 1, exp: 'أصل الجملة which was damaged (مبني للمجهول)، فنحذف ضمير الوصل و was ونبقي التصريف الثالث damaged.' },
+                    { q: '______ by her family, she managed to overcome many challenges.', options: ['Supporting', 'Support', 'Supported', 'Supports'], answer: 2, exp: 'المعنى مبني للمجهول (لأنها دُعمت من عائلتها)، فنستخدم التصريف الثالث Supported.' },
+                    { q: '______ the warning signs, the driver continued his dangerous behavior.', options: ['Not noticing', 'Not noticed', 'Notice', 'Notices'], answer: 0, exp: 'نفي اسم الفاعل المبني للمعلوم يكون بوضع Not قبل V-ing.' },
+                    { q: '______ his homework, Ahmed went out with his friends.', options: ['Being finished', 'Finished', 'Having finished', 'Having finish'], answer: 2, exp: 'الحدث الأول (إنهاء الواجب) اكتمل قبل الخروج، فنستخدم Having + P.P.' },
+                    { q: 'Which sentence is correctly structured?', options: ['Running through the park, the rain started to fall.', 'Running through the park, I saw the rain starting to fall.', 'The rain started to fall, running through the park.', 'Running through the park, raining was started.'], answer: 1, exp: 'يجب أن يكون فاعل الجملة الرئيسية (I) هو نفسه من يقوم بفعل الجري (Running).' },
+                    { q: '______ three times a day, this medicine will relieve your headache quickly.', options: ['Taking', 'Taken', 'Having taken', 'To take'], answer: 1, exp: 'المعنى مبني للمجهول (إذا أُخذ هذا الدواء ثلاث مرات يومياً)، فنبدأ بالتصريف الثالث Taken.' },
+                    { q: 'The storm hit the coastal city overnight, ______ dozens of families without shelter.', options: ['left', 'was leaving', 'leaving', 'to leave'], answer: 2, exp: 'تُستخدم عبارة اسم الفاعل (leaving) بعد الفاصلة لإيضاح نتيجة الحدث السابق بدلاً من (and left).' },
+                    { q: '______ properly, the ancient temple looks magnificent again.', options: ['Having restored', 'Restoring', 'Having been restored', 'To restore'], answer: 2, exp: 'المعبد تم ترميمه (مبني للمجهول في الماضي التام قبل النظر إليه)، لذا نستخدم Having been + P.P.' },
+                    { q: '______ well for the presentation, Sarah felt nervous on stage.', options: ['Not having prepared', 'Having not prepared', 'Not prepared', 'Not preparing to'], answer: 0, exp: 'نفي اسم الفاعل التام المبني للمعلوم يُصاغ بوضع Not قبل Having + P.P.' }
+                ],
+                essays: [
+                    {
+                        isJRE: false,
+                        question: 'Rewrite the following two sentences into one concise sentence using a Participial Phrase, and explain why you chose that participle form: "Because Mona had not checked the email carefully, she missed the deadline."',
+                        guidance: 'حوّل الجملة الأولى إلى عبارة وصفية منفية تعبر عن السبب في الماضي التام، ثم وضح القاعدة النحوية التي اعتمدت عليها.',
+                        modelAnswer: 'Not having checked the email carefully, Mona missed the deadline.\n\nExplanation: The Perfect Participle in the negative form ("Not having + P.P.") is used because the action of not checking the email happened before missing the deadline, and Mona is the active subject of both clauses.',
+                        rubric: [
+                            'استخدام صيغة النفي الصحيحة (Not having checked) في بداية الجملة.',
+                            'وضع فاصلة (,) بعد العبارة الوصفية وقبل الفاعل (Mona).',
+                            'توضيح اتحاد الفاعل وترتيب الأحداث في الشرح.'
+                        ]
+                    },
+                    {
+                        isJRE: false,
+                        question: 'Identify and correct the "Dangling Participle" error in the following sentence: "Walking through the crowded museum, the ancient statues amazed the tourists."',
+                        guidance: 'اكتشف الخلل في مطابقة الفاعل بين العبارة الوصفية والجملة الرئيسية، وأعد كتابة الجملة بصورة صحيحة.',
+                        modelAnswer: 'Corrected Sentence: Walking through the crowded museum, the tourists were amazed by the ancient statues.\n\nReason: In the original sentence, the grammatical subject ("the ancient statues") cannot walk. Making "the tourists" the subject of the main clause resolves the dangling participle.',
+                        rubric: [
+                            'تحديد أن التماثيل (the ancient statues) لا يمكن أن تكون فاعلاً لفعل المشي.',
+                            'تعديل الجملة الرئيسية ليصبح السياح (the tourists) هم الفاعل المباشر بعد الفاصلة.'
+                        ]
+                    },
+                    {
+                        isJRE: true,
+                        question: '[JRE - Job-Related & Workplace Communication] You are a Project Coordinator writing a brief status update email to your manager. Combine these ideas into two polished sentences using at least one Present Participle (V-ing) and one Past Participle (P.P.): "The team worked overtime yesterday. We completed the client report. The report was reviewed by the quality department. It is ready for submission."',
+                        guidance: 'تقمص دور منسق مشروعات يكتب بريداً مهنياً مختصراً لمديره، وادمج الأفكار باستخدام اسم الفاعل للمعلوم واسم المفعول للمجهول بأسلوب احترافي.',
+                        modelAnswer: 'Working overtime yesterday, the team completed the client report ahead of schedule. Reviewed by the quality department, the report is now ready for final submission.',
+                        rubric: [
+                            'استخدام اسم الفاعل (Working) لربط عمل الفريق الإضافي بإنجاز التقرير.',
+                            'استخدام اسم المفعول (Reviewed) لوصف التقرير الذي تمت مراجعته.',
+                            'صياغة الجملتين بأسلوب مهني واضح وخالٍ من الأخطاء الإملائية.'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'u1-relative',
+                unit: 'الوحدة الأولى: Living well in a complex world',
+                badge: '1.2 Grammar',
+                title: 'عبارات الوصل وضمائر الوصل',
+                enTitle: 'Relative Clauses & Pronouns',
+                icon: 'link-2',
+                color: 'blue',
+                summary: 'تُستخدم ضمائر الوصل للربط بين جملتين وإضافة معلومات أساسية (Defining) أو إضافية بين فاصلتين (Non-defining).',
+                rules: [
+                    {
+                        heading: '1. أنواع جمل الوصل (Defining vs. Non-defining)',
+                        explanation: 'الفرق الجوهري بينهما في المعنى واستخدام الفواصل (Commas) وإمكانية استخدام (that).',
+                        points: [
+                            { label: 'Defining (محددة للمعنى)', en: 'تعطي معلومة أساسية لا غنى عنها، بدون فواصل، ويمكن استخدام (that): The student who/that got the highest mark received a prize.' },
+                            { label: 'Non-defining (غير محددة - إضافية)', en: 'تعطي معلومة إضافية توضع بين فاصلتين (, ... ,) ويُمنع تماماً استخدام (that): My car, which is outside, needs some repairs.' },
+                            { label: 'مقارنة دقيقة', en: 'My sister who lives in Alex visited us (لدي أكثر من أخت). vs. My sister, who lives in Alex, visited us (لدي أخت واحدة فقط).' }
+                        ]
+                    },
+                    {
+                        heading: '2. استخدامات ضمائر الوصل وحروف الجر',
+                        explanation: 'اختيار الضمير الصحيح يعتمد على ما يعود عليه الاسم وما يأتي بعد الضمير.',
+                        points: [
+                            { label: 'who / whom / that (للعاقل)', en: 'who للفاعل والمفعول، whom للمفعول فقط ويسبقها حرف جر (with whom)، ولا يسبق حرف الجر who أو that.' },
+                            { label: 'which / that (لغير العاقل)', en: 'تحل محل فاعل أو مفعول غير عاقل، ويُسبق which بحرف جر (in which). كما قد تعود which على فكرة الجملة كاملة: Menna quarreled with her brother, which made their father angry.' },
+                            { label: 'where (للمكان) & when (للزمان)', en: 'where = in/at which (عند حدوث نشاط داخل المكان). أما إذا كنا نصف المكان نفسه أو وقع عليه الفعل نستخدم which: This is the house where I live. / This is the house which I bought.' },
+                            { label: 'whose (للملكية للعاقل وغير العاقل)', en: 'تُتبع باسم مملوك وتحل محل صفات الملكية: The student whose project won first prize was proud. / The man in whose house we live is generous.' },
+                            { label: 'what (بمعنى ما / الشيء الذي)', en: 'لا يأتي قبلها اسم موصوف وتساوي (the thing that): I didn\'t understand what he had said.' }
+                        ]
+                    },
+                    {
+                        heading: '3. حالات حذف ضمير الوصل (Omission)',
+                        explanation: 'يمكن اختصار جملة الوصل في ثلاث حالات رئيسية:',
+                        points: [
+                            { label: 'إذا كان مفعولاً (بعده فاعل + فعل)', en: 'The meat (which/that) we ate yesterday was delicious.' },
+                            { label: 'إذا جاء بعده (v. to be) يُحذف الضمير و (to be)', en: 'The encouragement (which was) given to me by my parents... / Hossam Hassan, (who was) a famous footballer, won prizes.' },
+                            { label: 'إذا جاء بعده فعل معلوم يُحذف الضمير ونضع (V-ing)', en: 'The boy who sits beside me ➔ The boy sitting beside me is clever.' }
+                        ]
+                    }
+                ],
+                warnings: [
+                    'فرّق بين (whose) للملكية متبوعة باسم، و (who\'s) التي هي اختصار لـ (who is) أو (who has).',
+                    'نستخدم (that) وجوباً بعد صيغ التفضيل (the best) وبعد كلمات مثل: all, everything, nothing, something, anything, few, little, much, only.',
+                    'بعد كلمة (the reason) نستخدم (why) أو (for which).'
+                ],
+                quizzes: [
+                    { q: 'We met the man ______ car was advertised in the local newspaper.', options: ['whose', 'which', 'who', 'whom'], answer: 0, exp: 'السيارة مملوكة للرجل (اسم + whose + اسم مملوك).' },
+                    { q: 'I like the people with ______ I work at The Central Bank of Egypt.', options: ['who', 'that', 'whose', 'whom'], answer: 3, exp: 'جاء حرف الجر (with) قبل ضمير الوصل العاقل، لذا يجب استخدام whom فقط.' },
+                    { q: 'In hospitals, they wake patients at 6 a.m., ______ is much too early.', options: ['when', 'what', 'where', 'which'], answer: 3, exp: 'ضمير الوصل هنا يعود على فكرة الجملة السابقة بأكملها، فنستخدم which.' },
+                    { q: 'Hong Kong is a place ______ a lot of tall buildings.', options: ['where', 'in which has', 'which has', 'which there are'], answer: 2, exp: 'الفعل has يحتاج إلى فاعل غير عاقل يعود على المكان، لذا نستخدم which وليس where.' },
+                    { q: 'She showed me ______ she had bought from the shopping mall yesterday.', options: ['which', 'where', 'that', 'what'], answer: 3, exp: 'لا يوجد اسم موصوف قبل النقط، والمعنى (الشيء الذي)، فنستخدم what.' },
+                    { q: 'Which one of the following sentences is grammatically incorrect?', options: ['I know the candidate whom I am going to support.', 'I know the candidate that I am going to support.', 'I know the candidate to whom I am going to support.', 'I know the candidate who I am going to support.'], answer: 2, exp: 'الفعل support لا يأخذ حرف الجر to، لذا وجود to whom خاطئ.' },
+                    { q: 'That was the most inspiring speech ______ I have ever listened to.', options: ['which', 'where', 'that', 'what'], answer: 2, exp: 'بعد صيغ التفضيل العليا (the most inspiring) نستخدم ضمير الوصل that.' },
+                    { q: 'Could you explain the exact reason ______ the conference was postponed?', options: ['which', 'why', 'where', 'whom'], answer: 1, exp: 'بعد كلمة (the reason) نستخدم why أو for which.' },
+                    { q: 'Alexandria, ______ is known as the Bride of the Mediterranean, attracts millions of visitors.', options: ['that', 'where', 'which', 'when'], answer: 2, exp: 'الجملة غير محددة للمعنى (تقع بين فاصلتين)، لذا يُمنع استخدام that ونستخدم which لأننا نصف المدينة ذاتها.' },
+                    { q: 'The employee ______ beside the window is responsible for customer relations.', options: ['who sitting', 'sits', 'sitting', 'sat'], answer: 2, exp: 'تم حذف ضمير الوصل و verb to be (who is sitting) والاكتفاء باسم الفاعل sitting.' }
+                ],
+                essays: [
+                    {
+                        isJRE: false,
+                        question: 'Explain the difference in meaning between these two sentences based on punctuation and relative clauses:\n1) "My brother who works in Cairo is visiting us tomorrow."\n2) "My brother, who works in Cairo, is visiting us tomorrow."',
+                        guidance: 'اشرح الفرق الدلالي بين جملة الوصل المحددة (Defining) وغير المحددة (Non-defining) من حيث عدد الإخوة وأهمية المعلومة.',
+                        modelAnswer: '1) Defining Relative Clause (no commas): Implies the speaker has more than one brother, and the clause "who works in Cairo" is essential to identify which specific brother is visiting.\n2) Non-defining Relative Clause (with commas): Implies the speaker has only one brother, and "who works in Cairo" is simply extra, non-essential information.',
+                        rubric: [
+                            'توضيح أن الجملة الأولى (بدون فواصل) تعني وجود أكثر من أخ وتحدد المقصود منهم.',
+                            'توضيح أن الجملة الثانية (بين فاصلتين) تعني وجود أخ واحد فقط وتضيف معلومة إضافية.'
+                        ]
+                    },
+                    {
+                        isJRE: false,
+                        question: 'Combine the following pairs of sentences using an appropriate relative pronoun (including a preposition where necessary):\na) The company is very successful. My cousin works for this company.\nb) The scientist won a global award. Her research changed modern medicine.',
+                        guidance: 'اربط كل زوج من الجمل باستخدام ضمير وصل دقيق مع مراعاة موقع حرف الجر والملكية.',
+                        modelAnswer: 'a) The company for which my cousin works is very successful. (OR: The company which/that my cousin works for is very successful.)\nb) The scientist whose research changed modern medicine won a global award.',
+                        rubric: [
+                            'استخدام (for which) أو (which... for) بشكل سليم في الجملة الأولى.',
+                            'استخدام (whose) للدلالة على الملكية في الجملة الثانية.'
+                        ]
+                    },
+                    {
+                        isJRE: true,
+                        question: '[JRE - Professional Profile & LinkedIn Bio] Write a short 3-sentence professional bio for a software engineer applying for a senior role. Include one Defining Relative Clause, one Non-defining Relative Clause, and one use of "whose" to highlight their achievements.',
+                        guidance: 'اكتب نبذة تعريفية مهنية قصيرة لمهندس برمجيات مستخدماً ثلاثة أنواع مختلفة من جمل الوصل بإتقان.',
+                        modelAnswer: 'Omar Nabil is a dedicated software engineer who specializes in artificial intelligence solutions. His latest healthcare app, which was launched last year, has helped over fifty thousand patients monitor their daily wellness. He is an innovative leader whose technical skills consistently inspire his entire development team.',
+                        rubric: [
+                            'تضمين جملة وصل محددة (Defining) بدون فواصل.',
+                            'تضمين جملة وصل غير محددة (Non-defining) بين فاصلتين باستخدام which.',
+                            'استخدام (whose) بشكل صحيح لربط المهارات أو الإنجازات بالشخص.'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'u1-conditionals',
+                unit: 'الوحدة الأولى: Living well in a complex world',
+                badge: '1.3 & 1.4 Grammar',
+                title: 'الجمل الشرطية وبدائل If',
+                enTitle: 'Conditional Structures & If Alternatives',
+                icon: 'git-branch',
+                color: 'blue',
+                summary: 'تُستخدم الجمل الشرطية للتعبير عن الحقائق، الاحتمالات المستقبلية، المواقف التخيلية، وكذلك للتحوط اللغوي (Hedging) في الكتابة الأكاديمية.',
+                rules: [
+                    {
+                        heading: '1. حالات If الأربع الأساسية (0, 1, 2, 3)',
+                        explanation: 'اختيار الحالة يعتمد على زمن الجملة ومدى واقعية أو إمكانية تحقق الشرط.',
+                        points: [
+                            { label: 'Zero Conditional (الحقائق والعادات)', en: 'If/When + Present Simple ➔ Present Simple | Ex: If water reaches 100°C, it boils. (تُستخدم للحقائق العامة والعادات المتكررة).' },
+                            { label: 'First Conditional (احتمال مستقبلي)', en: 'If + Present Simple ➔ will/can/may/should + inf. | Ex: If it stops raining, we will play football.' },
+                            { label: 'Second Conditional (موقف تخيلي في الحاضر)', en: 'If + Past Simple ➔ would/could/might + inf. | Ex: If I were you, I wouldn\'t waste my time.' },
+                            { label: 'Third Conditional (ندم أو تخيل عكس الماضي)', en: 'If + Past Perfect ➔ would/could/might + have + P.P. | Ex: If I had studied harder, I would have passed.' }
+                        ]
+                    },
+                    {
+                        heading: '2. بدائل If الهامة (If Alternatives)',
+                        explanation: 'روابط وعبارات تحل محل If وتؤدي معاني الشرط أو النفي أو الافتراض:',
+                        points: [
+                            { label: 'provided (that) / providing (that) / on condition (that) / as long as', en: 'بمعنى (بشرط أن / طالما) وتُتبع بجملة كاملة: You may use my laptop provided that you return it before evening.' },
+                            { label: 'Unless (لو لم / إذا لم = If ... not)', en: 'يأتي بعدها جملة مثبتة دائماً: You won\'t pass the test unless you revise regularly.' },
+                            { label: 'In case of / In the event of (في حالة)', en: 'يأتي بعدها اسم (Noun) أو (V-ing): Keep this number nearby in case of an emergency.' },
+                            { label: 'Without / But for (لولا / بدون)', en: 'يأتي بعدها اسم أو (V-ing): But for the doctor\'s quick action, the patient would have died.' },
+                            { label: 'In case (خشية أن / تحسباً لـ)', en: 'تُستخدم لاتخاذ احتياط مسبق لتجنب مشكلة محتملة: Save a copy of the file in case the computer crashes.' }
+                        ]
+                    },
+                    {
+                        heading: '3. حالات الحذف والتقديم (Inversion) والافتراض',
+                        explanation: 'يمكن الاستغناء عن If وتقديم الفعل المساعد في الحالات الأولى والثانية والثالثة:',
+                        points: [
+                            { label: 'Should + Subject + inf. (بديل الحالة 1 و 2)', en: 'Should the weather improve, we will continue the trip.' },
+                            { label: 'Were + Subject + (Noun / Adj / to + inf.) (بديل الحالة 2 فقط)', en: 'Were she my sister, I would help her. / Were the company to reduce prices, sales would increase.' },
+                            { label: 'Had + Subject + P.P. (بديل الحالة 3 فقط)', en: 'Had they informed us earlier, we would have attended the ceremony.' },
+                            { label: 'Suppose / Supposing / Imagine (that)', en: 'للافتراض غير الحقيقي (الحالة 2 غالباً) ويأتي جواب الشرط سؤالاً: Imagine that you won a million pounds, what would you spend it on?' }
+                        ]
+                    }
+                ],
+                warnings: [
+                    'إذا ارتبطت الحقيقة العلمية بوقت محدد (مثل yesterday أو tonight) تخرج من الحالة الصفرية وتأخذ الحالة المناسبة للزمن.',
+                    'في سؤال التحويل (Rewrite) للحالة الثانية والثالثة، تذكر عكس الإثبات إلى نفي والعكس (لأن الشرط عكس الواقع).'
+                ],
+                quizzes: [
+                    { q: 'If silver is exposed to air, it ______ color.', options: ['changed', 'changes', 'will change', 'changing'], answer: 1, exp: 'حقيقة علمية عامة في صيغة المبني للمجهول، فنستخدم الحالة الصفرية (مضارع بسيط changes).' },
+                    { q: 'If I ______ you, I would accept the offer immediately.', options: ['am', 'have', 'were', 'had been'], answer: 2, exp: 'إعطاء نصيحة في الحالة الشرطية الثانية يستخدم فيها were مع جميع الضمائر.' },
+                    { q: '______ the firefighters had arrived quickly, the building would have been destroyed.', options: ['Unless', 'Without', 'But for', 'If'], answer: 3, exp: 'جملة الشرط كاملة (فاعل + ماضٍ تام had arrived) وتحتاج لأداة ربط شرطية تأخذ جملة كاملة مثل If.' },
+                    { q: '______ a medical emergency, call this number immediately.', options: ['In case', 'In case of', 'Unless', 'Provided'], answer: 1, exp: 'جاء بعد النقط عبارة اسمية (a medical emergency) بدون فعل، فنستخدم In case of.' },
+                    { q: '______ the company to reduce prices, sales would increase significantly.', options: ['Had', 'Were', 'Should', 'Unless'], answer: 1, exp: 'تقديم Were متبوعة بالفاعل ثم (to + inf.) تحل محل If في الحالة الثانية.' },
+                    { q: 'We packed extra clothes ______ the weather became colder than expected.', options: ['unless', 'but for', 'in case', 'as long as'], answer: 2, exp: 'تجهيز ملابس إضافية تحسباً لتغير الطقس يستخدم معه in case.' },
+                    { q: 'You can borrow my reference book ______ you keep it clean and return it on Monday.', options: ['unless', 'as long as', 'in case of', 'without'], answer: 1, exp: 'المعنى هو (بشرط أن / طالما) متبوعاً بجملة كاملة مثبتة، فنستخدم as long as.' },
+                    { q: '______ the doctor\'s rapid intervention, the injured player wouldn\'t have recovered.', options: ['Unless', 'If', 'But for', 'In case'], answer: 2, exp: 'جاء بعد النقط عبارة اسمية (the doctor\'s rapid intervention) بمعنى (لولا)، فنستخدم But for.' },
+                    { q: '______ you need any further assistance during the workshop, please contact the organizer.', options: ['Had', 'Should', 'Were', 'Unless'], answer: 1, exp: 'الحذف والتقديم في الحالة الشرطية الأولى يستخدم فيه Should + فاعل + مصدر.' },
+                    { q: '______ they informed us of the schedule change earlier, we wouldn\'t have missed the flight.', options: ['Were', 'Should', 'Had', 'If'], answer: 2, exp: 'حذف If في الحالة الشرطية الثالثة يتم بتقديم Had + الفاعل + التصريف الثالث.' }
+                ],
+                essays: [
+                    {
+                        isJRE: false,
+                        question: 'Rewrite the following sentence in two different ways without changing its meaning: "If he hadn\'t trained diligently, he wouldn\'t have won the gold medal." (Use: 1. Had... / 2. But for...)',
+                        guidance: 'أعد صياغة الجملة الشرطية الثالثة مرة باستخدام التقديم (Had) ومرة باستخدام عبارة اسمية بعد (But for).',
+                        modelAnswer: '1. Had he not trained diligently, he wouldn\'t have won the gold medal.\n2. But for his diligent training, he wouldn\'t have won the gold medal.',
+                        rubric: [
+                            'تقديم Had مع الحفاظ على النفي بعد الفاعل (Had he not trained...).',
+                            'تحويل الفعل إلى اسم بعد But for (his diligent training).'
+                        ]
+                    },
+                    {
+                        isJRE: false,
+                        question: 'Explain the functional difference between "in case" and "in case of" with one clear example for each.',
+                        guidance: 'قارن بين الأداتين من حيث التركيب النحوي (ما يأتي بعد كل منهما) والمعنى، مع كتابة مثال تطبيقي لكل أداة.',
+                        modelAnswer: '"In case" is a conjunction followed by a full clause (subject + verb) to express taking a precaution for a possible future event. Example: Take an umbrella in case it rains.\n"In case of" is a prepositional phrase followed by a noun or gerund (V-ing) meaning "if something happens". Example: In case of fire, use the emergency stairs.',
+                        rubric: [
+                            'توضيح أن in case تتبع بجملة كاملة بينما in case of تتبع باسم أو V-ing.',
+                            'كتابة مثال صحيح نحوياً ودلالياً لكل منهما.'
+                        ]
+                    },
+                    {
+                        isJRE: true,
+                        question: '[JRE - Customer Service & Policy Drafting] You are drafting a warranty and return policy for an electronics store. Write 3 clear policy statements using "provided that", "unless", and "in the event of" to inform customers of their rights and conditions.',
+                        guidance: 'اكتب 3 بنود واضحة لسياسة استرجاع وضمان الأجهزة الإلكترونية مستخدماً بدائل If المطلوبة بدقة.',
+                        modelAnswer: '1. Customers may return any electronic device within 14 days provided that they present the original receipt and packaging.\n2. The warranty will not cover screen repairs unless the damage is proven to be a manufacturing defect.\n3. In the event of a technical malfunction during the first year, our service center will replace the item free of charge.',
+                        rubric: [
+                            'استخدام provided that مع جملة شرطية كاملة.',
+                            'استخدام unless متبوعة بجملة مثبتة.',
+                            'استخدام in the event of متبوعة بعبارة اسمية.'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'u1-skills',
+                unit: 'الوحدة الأولى: Living well in a complex world',
+                badge: '1.C Study Skills',
+                title: 'اللغة المتحيزة والمحايدة والفقرة التحليلية',
+                enTitle: 'Biased vs. Neutral Language, Persuasion & Analytical Paragraph',
+                icon: 'pen-tool',
+                color: 'emerald',
+                summary: 'كيفية التمييز بين الكتابة الموضوعية والمنحازة، وأدوات الإقناع، وبناء الفقرة التحليلية وفق نموذج PEEL.',
+                rules: [
+                    {
+                        heading: '1. الجمل المتحيزة (Biased) مقابل المحايدة (Neutral)',
+                        explanation: 'الوعي بنبرة الكاتب أمر حاسم في القراءة النقدية والكتابة الأكاديمية.',
+                        points: [
+                            { label: 'Biased Sentences (الجمل المتحيزة)', en: 'تُظهر رأياً شخصياً قوياً وتستخدم كلمات عاطفية ومبالغات بدلاً من الحقائق: "Social media is a terrible waste of time that completely destroys teenagers\' minds."' },
+                            { label: 'Neutral Sentences (الجمل المحايدة)', en: 'عادلة وموضوعية وتذكر الحقائق والأرقام دون انحياز: "Millions of teenagers around the world use social media platforms every day."' }
+                        ]
+                    },
+                    {
+                        heading: '2. أساليب الكتابة الإقناعية (Persuasive Writing Techniques)',
+                        explanation: 'أربع أدوات لغوية رئيسية يستخدمها الكُتّاب للتأثير في القارئ:',
+                        points: [
+                            { label: 'Rhetorical Questions (الأسئلة الخطابية)', en: 'أسئلة لا تنتظر إجابة بل تدفع القارئ للتفكير والموافقة: "Do I really need to check my phone every five minutes?"' },
+                            { label: 'Intensifiers (كلمات التعزيز والتوكيد)', en: 'لتقوية المعنى وإبراز الخطورة: very, extremely, significantly, greatly.' },
+                            { label: 'Hedging Words (ألفاظ التحوط والتحفظ)', en: 'لتجنب التعميم المطلق وإظهار الدقة العلمية: may, might, could, possibly, probably, tend to.' },
+                            { label: 'Absolute Words (ألفاظ الجزم المطلق)', en: 'تثبت الحقيقة بنسبة 100% دون استثناءات: always, never, every, completely, no excuse.' }
+                        ]
+                    },
+                    {
+                        heading: '3. هيكل الفقرة التحليلية (Analytical Paragraph - PEEL)',
+                        explanation: 'فقرة تشرح "كيف" و"لماذا" حدث الشيء مدعومة بالأدلة بدلاً من الوصف السطحي:',
+                        points: [
+                            { label: '1. Point (الفكرة الرئيسية)', en: 'الجملة الافتتاحية التي تحدد الحجة الأساسية بوضوح.' },
+                            { label: '2. Evidence (الدليل والبرهان)', en: 'حقائق أو إحصائيات أو اقتباسات تدعم الفكرة.' },
+                            { label: '3. Explanation (الشرح والتحليل)', en: 'تفسير كيف ولماذا يثبت هذا الدليل الفكرة (مع استخدام لغة التحوط).' },
+                            { label: '4. Link (الربط والختام)', en: 'جملة ختامية (تبدأ بـ Therefore) تلخص التحليل وتربطه بالفكرة الرئيسية.' }
+                        ]
+                    }
+                ],
+                sampleParagraph: {
+                    title: 'نموذج تطبيقي محلل بالألوان: الفقرة التحليلية (PEEL Analytical Paragraph)',
+                    subtitle: 'تأمل كيف تتكامل أجزاء الفقرة التحليلية مع استخدام ألفاظ التحوط (Hedging) والتوكيد (Intensifiers) بأسلوب علمي متوازن:',
+                    legend: [
+                        { label: 'Point (الفكرة الرئيسية)', colorClass: 'hl-neon-yellow' },
+                        { label: 'Evidence (الدليل والإحصائية)', colorClass: 'hl-electric-blue' },
+                        { label: 'Hedging & Intensifiers (التحوط والتوكيد)', colorClass: 'hl-hot-pink' },
+                        { label: 'Explanation (التحليل والتفسير)', colorClass: 'hl-mint-green' },
+                        { label: 'Link (الربط والختام)', colorClass: 'hl-playful-purple' }
+                    ],
+                    html: `<p class="en-block text-sm sm:text-base leading-loose text-slate-800 dark:text-slate-100">
+                        <span class="hl-neon-yellow">Excessive screen time before bedtime can negatively affect students' academic concentration.</span> 
+                        <span class="hl-electric-blue">According to a recent sleep health survey, nearly 68% of high school students who use smartphones after midnight report feeling exhausted during morning classes.</span> 
+                        <span class="hl-mint-green">This happens because blue light from digital screens</span> <span class="hl-hot-pink">significantly</span> <span class="hl-mint-green">delays melatonin production, which</span> <span class="hl-hot-pink">may</span> <span class="hl-mint-green">prevent the brain from reaching deep, restorative sleep stages.</span> 
+                        <span class="hl-playful-purple">Therefore, establishing a digital curfew at least one hour before sleep is likely to improve both rest quality and classroom focus.</span>
+                    </p>`
+                },
+                warnings: [
+                    'في الكتابة العلمية والتحليلية، تجنب الكلمات المطلقة (always / completely) واستبدلها بلغة التحوط (may / tend to) لتكون حجتك موضوعية.'
+                ],
+                quizzes: [
+                    { q: '"Do we really want our future generation to be controlled by digital screens?" This is a ______.', options: ['hook question', 'rhetorical question', 'hedging word', 'neutral sentence'], answer: 1, exp: 'سؤال استنكاري/خطابي لا يطلب إجابة بل يوجه القارئ للتفكير.' },
+                    { q: 'Writers use ______ language like "may" or "might" to avoid making 100% fixed claims.', options: ['absolute', 'biased', 'hedging', 'intensive'], answer: 2, exp: 'ألفاظ التحوط (Hedging words) تُستخدم لتخفيف حدة التعميم.' },
+                    { q: 'A/An ______ sentence states proven facts objectively without showing personal emotions.', options: ['biased', 'rhetorical', 'neutral', 'intensive'], answer: 2, exp: 'الجملة المحايدة تذكر الحقائق بموضوعية تامة.' },
+                    { q: 'In the PEEL structure of an analytical paragraph, the letter "E" stands for ______ and ______.', options: ['Emotion / Ending', 'Evidence / Explanation', 'Example / Exaggeration', 'Evaluation / Entry'], answer: 1, exp: 'نموذج PEEL يتكون من: Point, Evidence, Explanation, Link.' },
+                    { q: 'Which of the following words is considered an "Absolute Word" that writers should avoid in objective academic analysis?', options: ['possibly', 'tend to', 'completely', 'probably'], answer: 2, exp: 'كلمة completely تفيد الجزم المطلق بنسبة 100% بعكس ألفاظ التحوط.' },
+                    { q: 'Which sentence is an example of "Biased Language"?', options: ['The new library opens at 8:00 a.m. on weekdays.', 'Over 400 students attended the science fair last week.', 'This ridiculous policy will totally ruin our school community.', 'Researchers observed a 15% increase in reading habits.'], answer: 2, exp: 'استخدام كلمات عاطفية ومبالغة مثل (ridiculous / totally ruin) يدل على التحيز.' },
+                    { q: 'What is the main purpose of the "Link" sentence at the end of a PEEL paragraph?', options: ['To introduce a completely unrelated topic', 'To summarize the analysis and connect back to the main point', 'To ask a personal question to the reader', 'To list random vocabulary words'], answer: 1, exp: 'جملة الربط الختامية تلخص التحليل وتربطه بالفكرة الرئيسية للفقرة.' },
+                    { q: 'Words like "significantly", "extremely", and "greatly" are used in persuasive writing as ______.', options: ['hedging words', 'rhetorical questions', 'intensifiers', 'neutral nouns'], answer: 2, exp: 'تُسمى هذه الكلمات Intensifiers لأنها تقوي المعنى وتؤكده.' },
+                    { q: 'An analytical paragraph differs from a descriptive paragraph because it focuses on ______.', options: ['how and why something happens using evidence', 'only what things look, smell, and sound like', 'telling a fictional fairy tale', 'listing dates without explanation'], answer: 0, exp: 'الفقرة التحليلية تشرح الكيفية والسبب (How and Why) مدعومة بالأدلة.' },
+                    { q: 'Which transition word most commonly introduces the "Link" sentence in an analytical paragraph?', options: ['Suddenly,', 'Therefore,', 'Once upon a time,', 'Meanwhile,'], answer: 1, exp: 'تُستخدم Therefore لبدء الاستنتاج والربط في نهاية الفقرة التحليلية.' }
+                ],
+                essays: [
+                    {
+                        isJRE: false,
+                        question: 'Rewrite the following biased sentence into a neutral, objective statement suitable for an academic report:\nBiased: "Online gaming is a horrible addiction that completely destroys every teenager\'s future."',
+                        guidance: 'احذف الكلمات العاطفية والمطلقة (horrible, completely, every) واستخدم لغة محايدة وألفاظ تحوط (may / excessive).',
+                        modelAnswer: 'Neutral Version: "Excessive online gaming may negatively affect some teenagers\' academic performance and time management."',
+                        rubric: [
+                            'حذف الصفات العاطفية المتحيزة (horrible, destroys).',
+                            'استبدال الكلمات المطلقة (completely, every) بلغة تحوط (may, some).'
+                        ]
+                    },
+                    {
+                        isJRE: false,
+                        question: 'Write a 4-sentence analytical paragraph using the PEEL method (Point, Evidence, Explanation, Link) about how regular physical exercise benefits students.',
+                        guidance: 'طبق خطوات PEEL الأربع بالترتيب مع استخدام لفظ تحوط واحد على الأقل.',
+                        modelAnswer: '(Point) Regular physical exercise plays a vital role in enhancing students\' mental alertness. (Evidence) Studies indicate that students who engage in 30 minutes of daily activity perform better on memory tasks. (Explanation) Physical movement increases blood flow to the brain, which may stimulate focus and reduce exam anxiety. (Link) Therefore, incorporating short exercise routines into daily schedules can significantly support academic success.',
+                        rubric: [
+                            'وجود جملة فكرة رئيسية واضحة (Point) ودليل (Evidence).',
+                            'وجود تفسير منطقي (Explanation) مع لغة تحوط وجملة ختامية (Link).'
+                        ]
+                    },
+                    {
+                        isJRE: true,
+                        question: '[JRE - Educational Consultant Briefing] As a School Wellness Advisor, write a short persuasive message to parents (4–5 sentences) encouraging balanced screen habits at home. Include one rhetorical question, one intensifier, and one hedging phrase.',
+                        guidance: 'اكتب رسالة إقناعية موجهة لأولياء الأمور بصفتك مستشاراً تربوياً، مع توظيف سؤال خطابي، كلمة توكيد، وأسلوب تحوط.',
+                        modelAnswer: 'Do we truly realize how much digital distractions affect family conversations at home? While technology offers extremely valuable learning tools, unrestricted evening use may gradually reduce children\'s sleep quality and emotional well-being. By setting clear screen-free hours during dinner and before bedtime, parents can help their children build healthier daily routines.',
+                        rubric: [
+                            'تضمين سؤال خطابي (Rhetorical Question) في البداية أو الوسط.',
+                            'توظيف كلمة توكيد (مثل extremely) ولفظ تحوط (مثل may).',
+                            'الحفاظ على نبرة مهنية مقنعة ومحترمة موجهة لأولياء الأمور.'
+                        ]
+                    }
+                ]
+            },
+
+            // ==================== UNIT 2 ====================
+            {
+                id: 'u2-gerund-inf',
+                unit: 'الوحدة الثانية: Leisure Time',
+                badge: '2.1 & 2.2 Grammar',
+                title: 'المصدر واسم الفعل (Gerunds & Infinitives)',
+                enTitle: 'Verbs followed by V-ing, to + inf., or Both',
+                icon: 'list-checks',
+                color: 'violet',
+                summary: 'متى نستخدم (V-ing) ومتى نستخدم (to + inf.)، والأفعال التي يتغير معناها جذرياً باختلاف الصيغة بعدها.',
+                rules: [
+                    {
+                        heading: '1. أفعال وتعبيرات يتبعها (Gerund: V + ing)',
+                        explanation: 'يُستخدم (V-ing) كاسم بعد الأفعال والتعبيرات وحروف الجر التالية:',
+                        points: [
+                            { label: 'أفعال مشهورة يتبعها V-ing', en: 'admit (to), appreciate, avoid, consider, delay, deny, discuss, dislike, enjoy, escape, fancy, finish, imagine, involve, keep, mind, miss, postpone, practice, recall, resist, risk, spend, suggest.' },
+                            { label: 'تعبيرات تنتهي بحرف الجر (to) ويتبعها V-ing', en: 'look forward to, object to, be/get used to, in addition to, lead to, confess to, devote to, contribute to, stick to, adapt/adjust to, addicted to, when it comes to.' },
+                            { label: 'تعبيرات اصطلاحية ثابتة', en: 'be busy, It\'s no use / no good, It\'s (not) worth, can\'t help, can\'t stand, feel like, have difficulty (in), there is no point in.' },
+                            { label: 'صيغة المبني للمجهول (Passive Gerund)', en: 'تُصاغ بـ (being + P.P.): He was lucky to escape being punished.' }
+                        ]
+                    },
+                    {
+                        heading: '2. أفعال يتبعها (to + infinitive)',
+                        explanation: 'تنقسم إلى أفعال يأتي بعدها المصدر مباشرة، وأفعال تتطلب مفعولاً قبل المصدر:',
+                        points: [
+                            { label: 'مباشرة بعد الفعل', en: 'agree, aim, appear, attempt, choose, decide, determine, fail, hope, learn, manage, offer, plan, pretend, promise, prove, refuse, seem, struggle, want, wish.' },
+                            { label: 'فعل + مفعول + to + inf.', en: 'advise, allow, cause, encourage, force, get, invite, order, persuade, remind, request, teach, tell, train, urge, warn.' }
+                        ]
+                    },
+                    {
+                        heading: '3. أفعال يتغير معناها تماماً (V-ing vs. to + inf.)',
+                        explanation: 'انتبه للفارق الدقيق في المعنى والترتيب الزمني للحدث:',
+                        points: [
+                            { label: 'stop + V-ing vs. stop + to + inf.', en: 'stop + V-ing (يقلع عن / يتوقف عن فعل الشيء): He stopped taking sugar. | stop + to + inf. (يتوقف لكي يفعل شيئاً آخر): He stopped to take cash from the ATM.' },
+                            { label: 'remember / forget + V-ing vs. to + inf.', en: '+ V-ing (يتذكر/ينسى حدثاً تم بالفعل في الماضي): I remember locking the safe. | + to + inf. (يتذكر/ينسى أن يقوم بواجب مطلوب): Please remember to lock the safe.' },
+                            { label: 'regret + V-ing vs. regret + to + inf.', en: '+ V-ing (يندم على فعل قام به): I regret selling my old car. | + to + inf. (يأسف لإعلان خبر سيئ): We regret to inform you that...' },
+                            { label: 'try + V-ing vs. try + to + inf.', en: '+ V-ing (يجرب حلاً ليرى النتيجة): Try drinking water for your headache. | + to + inf. (يحاول ببذل مجهود شاق): The doctor tried to save the patient.' }
+                        ]
+                    }
+                ],
+                warnings: [
+                    'الأفعال (love, like, hate, prefer, start, begin, continue) تأخذ الصيغتين دون فرق يُذكر، ولكن إذا سبقها (would) مثل would like أو كان الفعل في المستمر (is starting) نستخدم (to + inf.) فقط.',
+                    'الأفعال (advise, allow, permit, forbid) تأخذ (V-ing) إذا لم يأتِ بعدها مفعول، وتأخذ (to + inf.) إذا جاء بعدها مفعول.'
+                ],
+                quizzes: [
+                    { q: 'Some workers object to ______ low wages during the economic recession.', options: ['paying', 'being paid', 'be paid', 'pay'], answer: 1, exp: 'التعبير object to يأخذ V-ing، والمعنى مبني للمجهول (أن يُدفع لهم)، فتصبح being paid.' },
+                    { q: 'I distinctly remember ______ the windows before I left, so how are they open now?', options: ['closed', 'close', 'closing', 'to close'], answer: 2, exp: 'الحدث (إغلاق النوافذ) تم بالفعل في الماضي وهو يتذكره الآن، فنستخدم closing.' },
+                    { q: 'On her way back home, she stopped ______ some fresh vegetables from the market.', options: ['bought', 'to buy', 'buying', 'buy'], answer: 1, exp: 'توقفت أثناء سيرها لكي تشتري (هدف)، فنستخدم to buy.' },
+                    { q: 'We regret ______ you that the train to Aswan has been delayed.', options: ['informing', 'inform', 'to inform', 'informed'], answer: 2, exp: 'إعلان خبر سيئ أو اعتذار رسمي يستخدم معه regret + to + inf.' },
+                    { q: 'Your shoes are very dirty; they need ______ right now.', options: ['to be cleaning', 'clean', 'to clean', 'cleaning'], answer: 3, exp: 'الفعل need بعد الفاعل غير العاقل يأخذ V-ing بمعنى المبني للمجهول (need cleaning = need to be cleaned).' },
+                    { q: 'Students look forward to ______ the summer camp at the end of the term.', options: ['attend', 'attending', 'attended', 'be attended'], answer: 1, exp: 'التعبير look forward to ينتهي بحرف الجر to فيتبعه V-ing.' },
+                    { q: 'The coach encouraged the young athletes ______ their best in the tournament.', options: ['doing', 'do', 'to do', 'done'], answer: 2, exp: 'الفعل encourage + مفعول يتبعه (to + inf.).' },
+                    { q: 'It\'s no use ______ over spilt milk; we must focus on finding a solution.', options: ['cry', 'to cry', 'crying', 'cried'], answer: 2, exp: 'التعبير الاصطلاحي It\'s no use يتبعه V-ing مباشرة.' },
+                    { q: 'The security guard doesn\'t allow ______ inside the museum halls.', options: ['to smoke', 'smoking', 'smoke', 'smoked'], answer: 1, exp: 'الفعل allow بدون مفعول بعده يتبعه V-ing مباشرة.' },
+                    { q: 'If you have trouble sleeping, try ______ a warm cup of herbal tea before bed.', options: ['drink', 'to drinking', 'drinking', 'drank'], answer: 2, exp: 'معنى الجملة هو تجربة حل لمعرفة نتيجته، فنستخدم try + V-ing.' }
+                ],
+                essays: [
+                    {
+                        isJRE: false,
+                        question: 'Explain the difference in meaning between each pair of sentences:\n1a) "He stopped smoking two years ago." vs. 1b) "He stopped to smoke a cigarette."\n2a) "I regret telling her the secret." vs. 2b) "I regret to tell you that your application was rejected."',
+                        guidance: 'وضح الفرق في المعنى والزمن بين استخدام (V-ing) و (to + inf.) مع الفعلين stop و regret.',
+                        modelAnswer: '1a) "stopped smoking" means he quit the habit completely.\n1b) "stopped to smoke" means he paused another activity in order to smoke.\n2a) "regret telling" means feeling sorry about a past action already done.\n2b) "regret to tell" is a polite, formal way to announce bad news.',
+                        rubric: [
+                            'توضيح معنى الإقلاع عن العادة مقابل التوقف لهدف مع الفعل stop.',
+                            'توضيح الندم على الماضي مقابل الأسف لإعلان خبر سيئ مع الفعل regret.'
+                        ]
+                    },
+                    {
+                        isJRE: false,
+                        question: 'Correct the grammatical mistakes in the following sentences and state the rule:\na) "We look forward to hear from you soon."\nb) "The teacher doesn\'t permit to talk during the test."',
+                        guidance: 'صحح الخطأ النحوي في كل جملة واذكر القاعدة الخاصة بحرف الجر (to) والفعل (permit).',
+                        modelAnswer: 'a) Correction: "We look forward to hearing from you soon." (Rule: "look forward to" ends with the preposition "to", which must be followed by a gerund V-ing).\nb) Correction: "The teacher doesn\'t permit talking during the test." (Rule: "permit" without an object is followed by V-ing; with an object, it takes "to + inf.").',
+                        rubric: [
+                            'تحويل hear إلى hearing بعد look forward to.',
+                            'تحويل to talk إلى talking لعدم وجود مفعول بعد permit.'
+                        ]
+                    },
+                    {
+                        isJRE: true,
+                        question: '[JRE - HR & Recruitment Response] You are an HR Officer replying to a job applicant. Write a formal 3-sentence response using: "regret to inform", "appreciate", and "look forward to" accurately.',
+                        guidance: 'اكتب رداً مهنياً قصيراً من مسؤول موارد بشرية إلى متقدم لوظيفة مستخدماً التعبيرات الثلاثة بصياغة نحوية سليمة.',
+                        modelAnswer: 'We truly appreciate receiving your application and reviewing your impressive portfolio. However, we regret to inform you that another candidate has been selected for the current marketing position. We will keep your resume on file and look forward to contacting you when future opportunities arise.',
+                        rubric: [
+                            'استخدام appreciate + V-ing بشكل صحيح.',
+                            'استخدام regret to inform لإبلاغ المتقدم بالنتيجة بأسلوب مهني.',
+                            'استخدام look forward to + V-ing في الختام.'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'u2-inf-advanced',
+                unit: 'الوحدة الثانية: Leisure Time',
+                badge: '2.3 & 2.4 Grammar',
+                title: 'المصدر بدون to والتراكيب المتقدمة',
+                enTitle: 'Bare Infinitive, Purpose Clauses & Sense Verbs',
+                icon: 'sparkles',
+                color: 'violet',
+                summary: 'استخدامات المصدر بدون to، والتعبير عن الغرض والنتيجة (too...to / enough to)، وأفعال الحواس.',
+                rules: [
+                    {
+                        heading: '1. المصدر بدون to (Bare Infinitive)',
+                        explanation: 'يأتي الفعل في صورته المجردة تماماً في المواضع التالية:',
+                        points: [
+                            { label: 'بعد التعبيرات والأفعال السببية', en: 'had better, would rather, let, make (في المعلوم): The thieves made the man empty his pocket. / You\'d better take an umbrella.' },
+                            { label: 'بعد suggest / recommend + that + فاعل', en: 'يأتي مصدر بدون إضافات مهما كان الفاعل: He suggested that she help the children.' },
+                            { label: 'ملحوظة هامة على would rather', en: 'إذا جاء بعدها فاعل نستخدم الماضي البسيط للمضارع والماضي التام للماضي: I\'d rather Ali went to bed early.' }
+                        ]
+                    },
+                    {
+                        heading: '2. التعبير عن الغرض والدرجة (Purpose & Degree)',
+                        explanation: 'طرق الربط لإظهار الهدف أو إمكانية/عدم إمكانية حدوث الفعل:',
+                        points: [
+                            { label: 'to / in order to / so as to + inf.', en: 'للتعبير عن الغرض (النفي: in order not to / so as not to): He left early so as not to miss the train.' },
+                            { label: 'so that / in order that + جملة كاملة', en: 'تُتبع بفاعل + (can/will للمضارع أو could/would للماضي): I studied hard so that I could get high marks.' },
+                            { label: 'too + Adjective + to + inf.', en: 'تفيد النفي (جداً لدرجة أنه لا): The box is too heavy to carry.' },
+                            { label: 'Adjective + enough + to + inf.', en: 'تفيد الإيجاب والكفاية (بدرجة كافية لـ): My brother is clever enough to pass the test.' }
+                        ]
+                    },
+                    {
+                        heading: '3. أفعال الحواس (see / watch / hear / listen to)',
+                        explanation: 'الفرق بين رؤية الحدث كاملاً أو جزء منه:',
+                        points: [
+                            { label: 'Sense Verb + Object + V-ing', en: 'رؤية أو سماع جزء من الحدث أثناء استمراره: I watched my father painting the room.' },
+                            { label: 'Sense Verb + Object + Infinitive', en: 'رؤية أو سماع الحدث كاملاً من البداية للنهاية: I watched my father paint the room.' }
+                        ]
+                    }
+                ],
+                warnings: [
+                    'بعد الروابط الزمنية (After / Before / While / When / Since) إذا لم يأتِ فاعل نستخدم (V-ing) مباشرة بشرط اتحاد الفاعل: While driving through the city, I ran out of petrol.'
+                ],
+                quizzes: [
+                    { q: 'You had better ______ a coat; it is very cold outside.', options: ['wearing', 'to wear', 'wear', 'to wearing'], answer: 2, exp: 'التعبير had better يتبعه دائماً مصدر بدون to.' },
+                    { q: 'The doctor recommended that the patient ______ some rest.', options: ['to take', 'taking', 'takes', 'take'], answer: 3, exp: 'بعد recommend + that + فاعل نستخدم المصدر المجرد (take) بدون s.' },
+                    { q: 'I stayed at the stadium and watched the team ______ the match from start to finish.', options: ['winning', 'win', 'to win', 'to winning'], answer: 1, exp: 'عبارة (from start to finish) تدل على مشاهدة الحدث كاملاً، فنستخدم المصدر win.' },
+                    { q: 'She practices speaking English every day ______ she can improve her pronunciation.', options: ['because', 'although', 'so that', 'unless'], answer: 2, exp: 'جاء بعد النقط جملة كاملة تحتوي على (فاعل + can + مصدر)، فنستخدم so that.' },
+                    { q: 'He set his alarm clock early ______ oversleep on the day of the interview.', options: ['so as not to', 'in order to', 'so that not', 'to not'], answer: 0, exp: 'نفي الغرض مع المصدر يكون بـ so as not to أو in order not to.' },
+                    { q: 'The math problem was ______ complicated for the students to solve without help.', options: ['enough', 'so', 'too', 'such'], answer: 2, exp: 'التركيب (too + صفة + to + مصدر) يفيد النفي وعدم القدرة على الحل.' },
+                    { q: 'I\'d rather you ______ your loud music down while I am studying.', options: ['turn', 'turned', 'turning', 'to turn'], answer: 1, exp: 'بعد would rather + فاعل للتمني في الحاضر نستخدم الماضي البسيط (turned).' },
+                    { q: 'As I walked past the music room, I heard someone ______ the piano.', options: ['to play', 'played', 'playing', 'plays'], answer: 2, exp: 'المرور أمام الغرفة يعني سماع جزء من الحدث أثناء استمراره، فنستخدم playing.' },
+                    { q: 'The new manager made all employees ______ the safety training session.', options: ['attend', 'to attend', 'attending', 'attended'], answer: 0, exp: 'الفعل السببي make في صيغة المبني للمعلوم يتبعه مفعول + مصدر بدون to.' },
+                    { q: 'Is the bridge wide ______ for two large trucks to pass at the same time?', options: ['too', 'enough', 'so', 'very'], answer: 1, exp: 'تأتي كلمة enough بعد الصفة مباشرة (wide enough).' }
+                ],
+                essays: [
+                    {
+                        isJRE: false,
+                        question: 'Rewrite the following sentences using the words in brackets:\n1) "The tea is very hot, so I cannot drink it." (too...to)\n2) "She woke up early because she wanted to catch the first bus." (so that)',
+                        guidance: 'أعد كتابة الجملتين مستخدماً التراكيب المطلوبة بدقة مع مراعاة الزمن.',
+                        modelAnswer: '1) The tea is too hot for me to drink.\n2) She woke up early so that she could catch the first bus.',
+                        rubric: [
+                            'استخدام too hot + to drink وحذف النفي cannot.',
+                            'استخدام so that + she could catch لمناسبة الزمن الماضي (woke up).'
+                        ]
+                    },
+                    {
+                        isJRE: false,
+                        question: 'Explain the grammatical and meaning difference between:\na) "I saw the artist painting a portrait."\nb) "I saw the artist paint a portrait."',
+                        guidance: 'وضح الفرق بين استخدام (V-ing) والمصدر المجرد بعد أفعال الحواس (see / watch / hear).',
+                        modelAnswer: 'a) "painting" (V-ing) indicates that the speaker saw only part of the action while it was in progress.\nb) "paint" (bare infinitive) indicates that the speaker watched the entire action from beginning to completion.',
+                        rubric: [
+                            'ربط V-ing برؤية جزء من الحدث أثناء استمراره.',
+                            'ربط المصدر المجرد برؤية الحدث كاملاً من البداية للنهاية.'
+                        ]
+                    },
+                    {
+                        isJRE: true,
+                        question: '[JRE - Workplace Safety & Team Guidelines] As a Team Leader, write 3 clear instructions for new interns using: "had better", "recommend that", and "in order not to".',
+                        guidance: 'اكتب 3 توجيهات مهنية للمتدربين الجدد مستخدماً التراكيب الثلاثة بصورة صحيحة نحوياً.',
+                        modelAnswer: '1. All new interns had better arrive ten minutes before the morning briefing.\n2. I strongly recommend that every intern back up their project files daily.\n3. Please double-check all client emails in order not to send incomplete information.',
+                        rubric: [
+                            'استخدام مصدر مجرد بعد had better.',
+                            'استخدام مصدر مجرد بعد recommend that + فاعل.',
+                            'استخدام صيغة النفي الصحيحة (in order not to + inf.).'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'u2-skills',
+                unit: 'الوحدة الثانية: Leisure Time',
+                badge: '2.C Study Skills',
+                title: 'فقرة الرأي وكتابة المذكرات اليومية',
+                enTitle: 'Opinion Paragraph & Diary Entry Structure',
+                icon: 'book-open',
+                color: 'emerald',
+                summary: 'الخطوات المنهجية لكتابة فقرة إبداء الرأي (OREC) والمذكرات اليومية السردية (Diary Entry).',
+                rules: [
+                    {
+                        heading: '1. مكونات فقرة إبداء الرأي (Opinion Paragraph)',
+                        explanation: 'تُبنى وفق أربع خطوات مترابطة لإقناع القارئ بوجهة نظرك:',
+                        points: [
+                            { label: '1. Opinion (Claim)', en: 'اذكر موقفك ورأيك بوضوح تام في الجملة الأولى.' },
+                            { label: '2. Reason', en: 'قدّم سبباً منطقياً يدعم رأيك.' },
+                            { label: '3. Example / Evidence', en: 'أضف مثالاً واقعياً أو شرحاً يوضح فكرتك.' },
+                            { label: '4. Conclusion', en: 'أعد صياغة رأيك بأسلوب مختلف في الجملة الختامية.' }
+                        ]
+                    },
+                    {
+                        heading: '2. هيكل المذكرة اليومية (Structure of a Diary Entry)',
+                        explanation: 'تسجيل التجارب والمشاعر الشخصية بأسلوب سردي صادق:',
+                        points: [
+                            { label: 'Date & Salutation', en: 'التاريخ والتحية الافتتاحية المعتادة (Dear Diary,).' },
+                            { label: 'Opening (الافتتاح)', en: 'وصف المكان والزمان والحالة التي كنت عليها في البداية.' },
+                            { label: 'The Story & Turning Point', en: 'سرد الأحداث بالماضي البسيط، وإبراز نقطة التحول الصعبة باستخدام الماضي المستمر لوصف الجو المحيط.' },
+                            { label: 'Reflection & Final Sentence', en: 'الدرس المستفاد من التجربة، والختام بجملة مؤثرة لا تُنسى.' }
+                        ]
+                    }
+                ],
+                sampleParagraph: {
+                    title: 'نموذج تطبيقي محلل بالألوان: فقرة الرأي والمذكرة السردية (OREC & Narrative Reflection)',
+                    subtitle: 'لاحظ التدرج المنطقي لفقرة إبداء الرأي (OREC) وكيفية توظيف الألوان لتمييز الرأي والسبب والمثال والخاتمة:',
+                    legend: [
+                        { label: 'Opinion (إعلان الرأي بوضوح)', colorClass: 'hl-neon-yellow' },
+                        { label: 'Reason (السبب المنطقي)', colorClass: 'hl-electric-blue' },
+                        { label: 'Example (المثال الواقعي)', colorClass: 'hl-mint-green' },
+                        { label: 'Expressive Vocabulary (تعبير شعوري)', colorClass: 'hl-hot-pink' },
+                        { label: 'Conclusion (إعادة صياغة الرأي)', colorClass: 'hl-playful-purple' }
+                    ],
+                    html: `<p class="en-block text-sm sm:text-base leading-loose text-slate-800 dark:text-slate-100">
+                        <span class="hl-neon-yellow">In my view, spending leisure time volunteering in local community projects is one of the most rewarding habits a young person can adopt.</span> 
+                        <span class="hl-electric-blue">This is primarily because helping others builds genuine empathy and practical teamwork skills that cannot be learned from textbooks alone.</span> 
+                        <span class="hl-mint-green">For instance, when I joined a weekend neighborhood clean-up campaign last month, I collaborated with neighbors of all ages and felt a</span> <span class="hl-hot-pink">deep sense of pride and belonging</span> <span class="hl-mint-green">as we transformed an empty lot into a green garden.</span> 
+                        <span class="hl-playful-purple">Ultimately, dedicating free hours to community service enriches both society and personal character.</span>
+                    </p>`
+                },
+                warnings: [
+                    'في المذكرات اليومية، استخدم ضمير المتكلم (I / we) وأزمنة السرد الماضي (Past Simple & Past Continuous).'
+                ],
+                quizzes: [
+                    { q: 'What is the correct order of an Opinion Paragraph?', options: ['Example ➔ Opinion ➔ Reason ➔ Conclusion', 'Opinion ➔ Reason ➔ Example ➔ Conclusion', 'Conclusion ➔ Reason ➔ Opinion ➔ Example', 'Reason ➔ Conclusion ➔ Example ➔ Opinion'], answer: 1, exp: 'الترتيب الصحيح هو: الرأي (Opinion) ثم السبب (Reason) ثم المثال (Example) ثم الخاتمة (Conclusion).' },
+                    { q: 'In a diary entry, which tense is used to describe what was happening around you at the turning point?', options: ['Future Simple', 'Present Perfect', 'Past Continuous', 'Present Simple'], answer: 2, exp: 'يُستخدم الماضي المستمر (Past Continuous) لوصف الأحداث الخلفية المستمرة لحظة نقطة التحول.' },
+                    { q: 'How does a diary entry typically begin?', options: ['With a formal business address', 'With the date and "Dear Diary,"', 'With a bibliography list', 'With a statistical table'], answer: 1, exp: 'تبدأ المذكرة اليومية بالتاريخ والتحية المعتادة Dear Diary.' },
+                    { q: 'Which phrase is most appropriate to introduce the "Example" step in an OREC opinion paragraph?', options: ['In conclusion,', 'For instance,', 'I strongly disagree that', 'Dear Diary,'], answer: 1, exp: 'عبارة For instance تُستخدم لتقديم المثال الواقعي الداعم للرأي.' },
+                    { q: 'What is the main function of the "Reflection" section at the end of a diary entry?', options: ['To list tomorrow\'s weather forecast', 'To share the personal lesson learned from the experience', 'To criticize the reader\'s habits', 'To copy a news article'], answer: 1, exp: 'التأمل الختامي يبرز الدرس المستفاد والمشاعر بعد انتهاء التجربة.' },
+                    { q: 'Which pronoun perspective is standard in diary writing?', options: ['Third-person objective (he/she/they)', 'First-person personal (I / we)', 'Second-person instructional (you must)', 'Passive impersonal only'], answer: 1, exp: 'تُكتب المذكرات بضمير المتكلم (I / we) للتعبير عن التجربة الشخصية.' },
+                    { q: 'In the OREC structure, the concluding sentence should ______.', options: ['introduce a brand-new unrelated argument', 'restate the writer\'s opinion in different words', 'ask five rhetorical questions', 'leave the paragraph unfinished'], answer: 1, exp: 'الخاتمة تعيد صياغة الرأي الرئيسي بأسلوب جديد ومؤثر.' },
+                    { q: 'Which of the following is a strong opening phrase for stating an opinion in an OREC paragraph?', options: ['Once upon a time,', 'I firmly believe that', 'According to the timetable,', 'Yesterday at 4 p.m.,'], answer: 1, exp: 'عبارة I firmly believe that تعبر عن الموقف والرأي بوضوح من الجملة الأولى.' },
+                    { q: 'During the "Story & Turning Point" of a diary entry, which tense narrates the main completed actions?', options: ['Past Simple', 'Future Continuous', 'Present Simple', 'Future Perfect'], answer: 0, exp: 'الماضي البسيط يسرد تسلسل الأحداث الرئيسية المنتهية.' },
+                    { q: 'Why is including a concrete example important in an opinion paragraph?', options: ['To make the paragraph longer without meaning', 'To provide real-world proof that makes the reason convincing', 'To confuse the reader with random numbers', 'To avoid stating a clear opinion'], answer: 1, exp: 'المثال الواقعي يدعم السبب ويجعل رأي الكاتب مقنعاً.' }
+                ],
+                essays: [
+                    {
+                        isJRE: false,
+                        question: 'Write a well-structured 4-sentence Opinion Paragraph following the OREC model (Opinion, Reason, Example, Conclusion) on whether reading printed books is better than reading on screens.',
+                        guidance: 'اكتب فقرة رأي من 4 جمل متكاملة تطبق خطوات OREC بوضوح وترابط.',
+                        modelAnswer: '(Opinion) I firmly believe that reading printed books offers a far deeper experience than reading on digital screens. (Reason) Printed pages reduce eye strain and eliminate the constant notifications that interrupt concentration. (Example) For example, when I read a physical novel in the evening, I stay focused for hours and remember the details much better. (Conclusion) Therefore, traditional books remain an irreplaceable companion for true reading enjoyment.',
+                        rubric: [
+                            'تحديد الرأي بوضوح في الجملة الأولى (Opinion).',
+                            'تقديم سبب منطقي (Reason) ومثال واقعي (Example).',
+                            'إعادة صياغة الرأي في الخاتمة (Conclusion).'
+                        ]
+                    },
+                    {
+                        isJRE: false,
+                        question: 'Write a short Diary Entry (5–6 sentences) about a challenging outdoor adventure or hobby experience. Include a date, salutation, a turning point using Past Continuous, and a final reflection.',
+                        guidance: 'اكتب مذكرة يومية قصيرة تتضمن التاريخ والتحية ونقطة تحول بالماضي المستمر ودرساً مستفاداً في النهاية.',
+                        modelAnswer: 'October 18, 2026\nDear Diary,\nToday I went hiking in the desert hills with my cousins for the very first time. Everything started smoothly under a bright morning sky. However, as we were climbing the steepest trail, dark clouds suddenly gathered and a strong wind started blowing. We quickly found shelter behind a large rock until the storm passed. Looking back, I realized how essential preparation and teamwork are during unexpected challenges.',
+                        rubric: [
+                            'وجود التاريخ والتحية (Dear Diary,).',
+                            'استخدام الماضي المستمر لوصف نقطة التحول (as we were climbing...).',
+                            'ختام المذكرة بتأمل ودرس مستفاد.'
+                        ]
+                    },
+                    {
+                        isJRE: true,
+                        question: '[JRE - Employee Engagement & HR Newsletter] As an Internal Communications Specialist, write an OREC opinion paragraph for the company newsletter explaining why recreational team-building activities improve workplace productivity.',
+                        guidance: 'اكتب فقرة رأي مهنية للنشرة الداخلية للشركة حول أهمية الأنشطة الترفيهية الجماعية في رفع الإنتاجية وفق نموذج OREC.',
+                        modelAnswer: 'In my professional opinion, organizing regular recreational team-building activities is essential for boosting workplace productivity. When colleagues interact outside formal meetings, communication barriers disappear and mutual trust grows stronger. For instance, after our department held an outdoor sports day last quarter, cross-team collaboration on client projects improved noticeably. Ultimately, investing in shared leisure experiences creates a happier, more efficient work environment.',
+                        rubric: [
+                            'الالتزام الكامل بتسلسل OREC (رأي، سبب، مثال عملي، خاتمة).',
+                            'استخدام لغة مهنية مناسبة للنشرة الداخلية للشركة.'
+                        ]
+                    }
+                ]
+            },
+
+            // ==================== UNIT 3 ====================
+            {
+                id: 'u3-prepositions',
+                unit: 'الوحدة الثالثة: Echoes of the Past',
+                badge: '3.1 & 3.2 Grammar',
+                title: 'العبارات الظرفية للمكان والزمان',
+                enTitle: 'Prepositional Phrases of Place & Time',
+                icon: 'map-pin',
+                color: 'amber',
+                summary: 'الدقة في استخدام حروف الجر المكانية والزمنية في الكتابة التاريخية والوصفية والتمييز بين حرف الجر وأداة الربط.',
+                rules: [
+                    {
+                        heading: '1. حروف الجر الدالة على المكان (Prepositions of Place)',
+                        explanation: 'تحدد الموقع بدقة حسب الملامسة، الارتفاع، الامتداد، أو الحدود:',
+                        points: [
+                            { label: 'at / in / on', en: 'at (نقطة محددة: at the entrance)، in (مساحة محاطة/مدن: in Luxor)، on (ملامسة سطح أفقي أو رأسي: on the wall / on the ceiling).' },
+                            { label: 'over vs. above / under vs. below', en: 'over (فوق مع تغطية أو عبور: flew over the city) vs. above (في مستوى أعلى دون ملامسة). under (أسفل ومغطى مباشرة) vs. below (في مستوى أدنى عموماً).' },
+                            { label: 'between vs. among', en: 'between (بين عناصر محددة ومنفصلة) vs. among (وسط مجموعة كبيرة غير محددة: among the ruins).' },
+                            { label: 'across / along / through / beyond', en: 'across (عبر من طرف لآخر)، along (على طول/بمحاذاة خط: along the Nile)، through (من خلال مجسم/بوابة)، beyond (ما وراء الحدود).' }
+                        ]
+                    },
+                    {
+                        heading: '2. حروف الجر الدالة على الزمن (Prepositions of Time)',
+                        explanation: 'تحدد اللحظة أو المدة أو المدى الزمني:',
+                        points: [
+                            { label: 'at / on / in', en: 'at (الساعات واللحظات: at 9 a.m. / at night)، on (الأيام والتواريخ الكاملة: on Friday / on the 14th of October)، in (الشهور والفصول والسنوات والقرون: in 2026 / in the 21st century).' },
+                            { label: 'since vs. for vs. during vs. throughout', en: 'since + نقطة البداية (since 1300 BC)، for + مقدار المدة (for 3 hours)، during + اسم الفترة/الحدث (during the reign of Ramesses II)، throughout (طوال الفترة دون انقطاع).' },
+                            { label: 'by vs. until (till) vs. within', en: 'by (بحلول وقت محدد كحد أقصى: by 12 o\'clock)، until (استمرار الفعل حتى نقطة توقفه: open until 7 p.m.)، within (في غضون مدة: within three months).' }
+                        ]
+                    },
+                    {
+                        heading: '3. الفرق بين حرف الجر (Preposition) وأداة الربط (Conjunction)',
+                        explanation: 'كلمات مثل (After / Before / Since) يتغير تصنيفها حسب ما يليها:',
+                        points: [
+                            { label: 'حرف جر (Preposition)', en: 'إذا جاء بعدها اسم (Noun) أو (V-ing): Check your answers before submitting the exam. / After sunset.' },
+                            { label: 'أداة ربط (Conjunction)', en: 'إذا جاء بعدها جملة كاملة (فاعل + فعل): After I had written the essay, I showed it to my teacher.' }
+                        ]
+                    }
+                ],
+                warnings: [
+                    'كلمة (opposite) لا تأخذ حرف الجر (to): نقول (opposite the library) وليس (opposite to).',
+                    'كلمة (near) لا تأخذ (to) بخلاف (close to) و (next to).'
+                ],
+                quizzes: [
+                    { q: 'The River Nile flows ______ Egypt from south to north.', options: ['on', 'at', 'through', 'outside'], answer: 2, exp: 'يجري النيل عبر/خلال مصر من الجنوب للشمال (through).' },
+                    { q: 'Several rare manuscripts were discovered hidden ______ hundreds of old books.', options: ['between', 'opposite', 'beyond', 'among'], answer: 3, exp: 'وسط مجموعة كبيرة غير محددة نستخدم among.' },
+                    { q: 'The historic artifact was successfully discovered ______ the 4th of July, 1922.', options: ['in', 'on', 'since', 'at'], answer: 1, exp: 'التاريخ الكامل الذي يحدد اليوم (the 4th of July) يأخذ حرف الجر on.' },
+                    { q: 'You must complete and submit the quiz ______ twenty minutes.', options: ['since', 'after', 'within', 'throughout'], answer: 2, exp: 'في غضون مدة زمنية محددة كحد أقصى نستخدم within.' },
+                    { q: 'Choose the correct statement where "before" is used as a preposition of time:', options: ['Before the teacher entered the class, students opened booklets.', 'Before he answers any question, he reads it carefully.', 'Before they started revision, they reviewed the vocabulary.', 'Before the final revision, the students reviewed the vocabulary.'], answer: 3, exp: 'في الاختيار الرابع جاء بعد Before عبارة اسمية (the final revision) بدون فعل، لذا فهي حرف جر.' },
+                    { q: 'Ancient Egyptians built magnificent temples ______ the banks of the River Nile.', options: ['through', 'along', 'between', 'into'], answer: 1, exp: 'بمحاذاة أو على طول ضفاف النيل نستخدم along.' },
+                    { q: 'Many remarkable architectural monuments were erected ______ the reign of Ramesses II.', options: ['while', 'since', 'during', 'for'], answer: 2, exp: 'جاء بعد النقط عبارة اسمية (the reign of Ramesses II)، فنستخدم حرف الجر during.' },
+                    { q: 'The Grand Egyptian Museum is located ______ the Giza Pyramids.', options: ['opposite to', 'near to', 'opposite', 'between'], answer: 2, exp: 'كلمة opposite لا تأخذ حرف الجر to، فنقول opposite the Giza Pyramids.' },
+                    { q: 'All restoration work on the historic citadel must be completed ______ next December.', options: ['until', 'by', 'since', 'for'], answer: 1, exp: 'بحلول موعد نهائي كحد أقصى نستخدم by.' },
+                    { q: 'The museum gallery remains open to visitors ______ 9:00 p.m. on Thursdays.', options: ['by', 'within', 'until', 'since'], answer: 2, exp: 'استمرار بقاء المتحف مفتوحاً حتى ساعة معينة يُعبر عنه بـ until.' }
+                ],
+                essays: [
+                    {
+                        isJRE: false,
+                        question: 'Explain the grammatical difference between "before" as a Preposition and "before" as a Conjunction, providing one clear example for each.',
+                        guidance: 'قارن بين وظيفتي كلمة before حسب ما يليها في الجملة، مع كتابة مثال لكل حالة.',
+                        modelAnswer: '1. Preposition of Time: Followed by a noun phrase or gerund (V-ing), without a subject and verb. Example: "Please review your notes before the exam."\n2. Conjunction of Time: Followed by a full clause (subject + verb). Example: "Please review your notes before you enter the exam hall."',
+                        rubric: [
+                            'تحديد أن حرف الجر يتبعه اسم أو V-ing وأداة الربط تتبعها جملة كاملة.',
+                            'تقديم مثال صحيح لكل استخدام.'
+                        ]
+                    },
+                    {
+                        isJRE: false,
+                        question: 'Distinguish between the following pairs of prepositions with brief examples:\na) "between" vs. "among"\nb) "by" vs. "until"',
+                        guidance: 'اشرح الفرق الدقيق في الاستخدام بين كل زوج مع مثال توضيحي قصير.',
+                        modelAnswer: 'a) "Between" is used for two or distinct separate items (e.g., The statue stands between two pillars), whereas "among" is used within a large, uncounted group (e.g., The coin was found among ancient ruins).\nb) "By" indicates a deadline (at or before a time: Finish the report by Friday), whereas "until" indicates an action continuing up to a stopping point (The library stays open until 8 p.m.).',
+                        rubric: [
+                            'توضيح الفرق بين between و among بالأمثلة.',
+                            'توضيح الفرق بين by (حد أقصى) و until (استمرار حتى التوقف) بالأمثلة.'
+                        ]
+                    },
+                    {
+                        isJRE: true,
+                        question: '[JRE - Museum Tour Guide & Visitor Information] As a Tour Guide at the Grand Egyptian Museum, write a 4-sentence welcome announcement for visitors using at least four prepositions of place and time (e.g., at, along, among, until, throughout).',
+                        guidance: 'اكتب إعلاناً ترحيبياً للزوار بصفتك مرشداً سياحياً في المتحف المصري الكبير موظفاً 4 حروف جر مكانية وزمنية بدقة.',
+                        modelAnswer: 'Welcome to the Grand Egyptian Museum, located just opposite the Giza Pyramids! Our guided tour begins at 10:00 a.m. in the Grand Atrium, where you can admire the colossal statue of Ramesses II. As we walk along the main staircase, you will see dozens of royal artifacts arranged throughout the galleries. Please note that the exhibition halls remain open until 6:00 p.m. today.',
+                        rubric: [
+                            'توظيف 4 حروف جر مكانية وزمنية على الأقل بشكل صحيح.',
+                            'الحفاظ على أسلوب إرشادي ترحيبي واضح ودقيق.'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'u3-concession',
+                unit: 'الوحدة الثالثة: Echoes of the Past',
+                badge: '3.3 & 3.4 Grammar',
+                title: 'عبارات الاستدراك والتناقض',
+                enTitle: 'Concession Clauses & Contrast Linkers',
+                icon: 'scale',
+                color: 'amber',
+                summary: 'كيفية التعبير عن التناقض والاعتراف بوجهة النظر الأخرى في الكتابة الجدلية باستخدام الروابط المناسبة.',
+                rules: [
+                    {
+                        heading: '1. روابط يتبعها جملة كاملة (Clause: Subject + Verb)',
+                        explanation: 'تُستخدم لربط جملتين متناقضتين ولا يُستخدم معها (but) في نفس الجملة:',
+                        points: [
+                            { label: 'Although / Though / Even though (بالرغم من أن)', en: 'Although it was raining, we went for a walk.' },
+                            { label: 'While it is true that ... (في حين أنه صحيح أن)', en: 'تُستخدم للتسليم بحقيقة واضحة قبل عرض الجانب الآخر: While it is true that money is important, it cannot buy happiness.' },
+                            { label: 'It may be argued that ... (قد يجادل البعض بأن)', en: 'تُستخدم لطرح وجهة نظر قابلة للنقاش والرد عليها: It may be argued that online learning is easier; nevertheless, classrooms are better.' },
+                            { label: 'Whereas / While (بينما / في حين أن)', en: 'للمقارنة المباشرة بين طرفين: My brother likes sports, whereas I prefer reading.' }
+                        ]
+                    },
+                    {
+                        heading: '2. روابط يتبعها شبه جملة (Phrase: Noun / V-ing)',
+                        explanation: 'لا يأتي بعدها فعل مصرف أبداً:',
+                        points: [
+                            { label: 'Despite / In spite of (على الرغم من)', en: 'Despite the cold weather, she wore a T-shirt. / In spite of being tired, he finished his homework.' },
+                            { label: 'تحويلها إلى جملة كاملة', en: 'يمكن إضافة (the fact that) ليتبعها جملة كاملة: Despite the fact that he was tired, he worked.' }
+                        ]
+                    },
+                    {
+                        heading: '3. روابط الظروف وحالات التقديم الخاصة',
+                        explanation: 'انتبه لعلامات الترقيم والترتيب بعد هذه الأدوات:',
+                        points: [
+                            { label: 'However / Nevertheless (مع ذلك)', en: 'تأتي في بداية الجملة الثانية متبوعة بفاصلة: He was ill. However, he went to school. أو مسبوقة بفاصلة منقوطة (;).' },
+                            { label: 'However + Adjective/Adverb + Subject + Verb (مهما يكن)', en: 'However ill he was, he went to school. (يأتي بعدها الصفة مباشرة ثم الفاعل والفعل).' },
+                            { label: 'Admittedly (باعتراف الجميع / حقيقةً)', en: 'Admittedly, the exam was difficult; however, everyone passed.' },
+                            { label: 'Whatever + (Noun) + Subject + Verb (مهما)', en: 'Whatever mistakes he makes, I will forgive him.' }
+                        ]
+                    }
+                ],
+                warnings: [
+                    'ممنوع الجمع بين (Although) و (but) في نفس الجملة: (✗) Although he is rich, but he is unhappy.',
+                    'كلمة (Despite) لا تأخذ حرف الجر (of) أبداً؛ إما (Despite) وحدها أو (In spite of).'
+                ],
+                quizzes: [
+                    { q: '______ having a lot of homework, Ayman went to the cinema with his friends.', options: ['Even though', 'However', 'Although', 'Despite'], answer: 3, exp: 'جاء بعد النقط (V-ing: having) وليس جملة كاملة، فنستخدم Despite.' },
+                    { q: '______ courageous he was, he escaped when he saw the tiger.', options: ['While', 'Despite', 'However', 'Although'], answer: 2, exp: 'التركيب (However + صفة + فاعل + فعل) يفيد معنى (مهما كان شجاعاً).' },
+                    { q: 'In spite of ______ the traffic jam, they arrived at the meeting on time.', options: ['face', 'they faced', 'facing', 'faced'], answer: 2, exp: 'حرف الجر of يتبعه الفعل مضافاً إليه ing.' },
+                    { q: 'Which sentence is grammatically correct?', options: ['Despite the museum is modern, it preserves ancient history.', 'Although the museum is modern, it preserves ancient history.', 'Although its modern design, it preserves ancient history.', 'In spite the museum is modern, it preserves ancient history.'], answer: 1, exp: 'Although يتبعها جملة كاملة (the museum is modern).' },
+                    { q: '______ it is true that restoring monuments is costly, preserving cultural heritage is priceless.', options: ['Despite', 'While', 'However', 'In spite of'], answer: 1, exp: 'التعبير الأكاديمي المتكامل هو While it is true that... + جملة كاملة.' },
+                    { q: 'The archaeological site is located in a remote desert; ______, thousands of tourists visit it annually.', options: ['although', 'despite', 'nevertheless', 'whereas'], answer: 2, exp: 'بعد الفاصلة المنقوطة (;) وقبل الفاصلة (,) نستخدم ظرف الاستدراك nevertheless أو however.' },
+                    { q: '______ obstacles the researchers encountered, they refused to abandon the excavation.', options: ['However', 'Whatever', 'Although', 'Despite of'], answer: 1, exp: 'كلمة Whatever تُتبع مباشرة بالاسم (obstacles) ثم الفاعل والفعل بمعنى (مهما كانت العقبات).' },
+                    { q: 'My sister enjoys studying ancient history, ______ my brother prefers modern robotics.', options: ['despite', 'whereas', 'however', 'in spite of'], answer: 1, exp: 'للمقارنة المباشرة بين شخصين أو طرفين نستخدم whereas.' },
+                    { q: 'Despite ______ that the weather was stormy, the expedition continued as planned.', options: ['being', 'the fact', 'it was', 'although'], answer: 1, exp: 'تُضاف عبارة (the fact that) بعد Despite لكي يتبعها جملة كاملة.' },
+                    { q: '______, digital archives are convenient; however, physical libraries still offer unique research value.', options: ['Although', 'Despite', 'Admittedly', 'Whereas'], answer: 2, exp: 'تأتي كلمة Admittedly في بداية الجملة متبوعة بفاصلة للاعتراف بحقيقة قبل الاستدراك عليها.' }
+                ],
+                essays: [
+                    {
+                        isJRE: false,
+                        question: 'Rewrite the following sentence using the words in brackets:\n"Although the ancient manuscript was severely damaged, historians managed to translate it."\n1) (Despite)\n2) (However)',
+                        guidance: 'أعد كتابة الجملة مرتين مرة باستخدام Despite (مع عبارة اسمية أو V-ing) ومرة باستخدام However (مع الصفة أو كرابط بين جملتين).',
+                        modelAnswer: '1) Despite being severely damaged (OR: Despite the severe damage to the ancient manuscript), historians managed to translate it.\n2) However severely damaged the ancient manuscript was, historians managed to translate it. (OR: The ancient manuscript was severely damaged; however, historians managed to translate it.)',
+                        rubric: [
+                            'استخدام عبارة اسمية أو V-ing بعد Despite بدون فعل مصرف.',
+                            'استخدام علامات الترقيم الصحيحة أو تقديم الصفة مع However.'
+                        ]
+                    },
+                    {
+                        isJRE: false,
+                        question: 'Identify and correct the two grammatical/punctuation errors in this sentence: "Although artificial intelligence saves time, but many experts warn against over-reliance, despite it offers great benefits."',
+                        guidance: 'اكتشف الخطأين في استخدام الروابط (Although... but) و (despite + جملة) وصحح الجملة.',
+                        modelAnswer: 'Corrected Sentence: "Although artificial intelligence saves time, many experts warn against over-reliance, even though (OR: despite the fact that) it offers great benefits."\n\nErrors fixed: 1) Removed "but" because "Although" already shows contrast. 2) Replaced "despite" with "even though" or "despite the fact that" before a full clause.',
+                        rubric: [
+                            'حذف كلمة but لعدم جواز الجمع بينها وبين Although.',
+                            'استبدال despite بأداة تتبعها جملة كاملة أو إضافة the fact that.'
+                        ]
+                    },
+                    {
+                        isJRE: true,
+                        question: '[JRE - Cultural Heritage Policy Brief] As a Heritage Preservation Officer, write a 3-sentence balanced argument on funding historic museum renovations versus building new community centers. Use "While it is true that...", "Nevertheless,", and "Despite".',
+                        guidance: 'اكتب فقرة موازنة مهنية حول تمويل ترميم المتاحف التاريخية مقابل بناء مراكز مجتمعية حديثة موظفاً الروابط الثلاثة بدقة.',
+                        modelAnswer: 'While it is true that modern community centers address immediate social needs, neglecting historic museums risks losing our national identity forever. Nevertheless, city planners must allocate budgets carefully to support both cultural preservation and public services. Despite limited municipal funding, public-private partnerships can successfully sustain our heritage landmarks.',
+                        rubric: [
+                            'توظيف While it is true that + جملة كاملة.',
+                            'استخدام Nevertheless متبوعة بفاصلة.',
+                            'استخدام Despite متبوعة بعبارة اسمية.'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'u3-skills',
+                unit: 'الوحدة الثالثة: Echoes of the Past',
+                badge: '3.C Study Skills',
+                title: 'المقال الجدلي (Discursive Essay)',
+                enTitle: 'Types & Structure of Discursive Essays',
+                icon: 'message-square-diff',
+                color: 'emerald',
+                summary: 'كيفية مناقشة القضايا الجدلية من زوايا متعددة بموضوعية وتوازن.',
+                rules: [
+                    {
+                        heading: '1. أنواع المقال الجدلي (Types of Discursive Essays)',
+                        explanation: 'ينقسم المقال الجدلي إلى ثلاثة أنماط رئيسية حسب المطلوب في السؤال:',
+                        points: [
+                            { label: '1. Opinion-Based Discursive Essay', en: 'تُبدي رأيك بوضوح، ولكن بعد مناقشة وجهتي النظر المؤيدة والمعارضة بعدالة.' },
+                            { label: '2. For and Against Essay', en: 'تناقش المزايا والعيوب بالتساوي التام دون الانحياز لجانب على حساب الآخر.' },
+                            { label: '3. Solution-Oriented Essay', en: 'تطرح مشكلة معينة وتستكشف حلولاً متنوعة لها من وجهات نظر مختلفة.' }
+                        ]
+                    },
+                    {
+                        heading: '2. البناء القياسي للمقال الجدلي (4 فقرات)',
+                        explanation: 'توزيع الأفكار بشكل منطقي ومترابط:',
+                        points: [
+                            { label: '1. Introduction (المقدمة)', en: 'تقديم الموضوع وخلفية عامة عنه، والختام بجملة الأطروحة (Thesis Statement).' },
+                            { label: '2. Body Paragraph 1 (المؤيد)', en: 'عرض الحجج المؤيدة للموضوع مدعومة بالأمثلة.' },
+                            { label: '3. Body Paragraph 2 (المعارض)', en: 'عرض وجهة النظر المعارضة مع ذكر الأسباب.' },
+                            { label: '4. Conclusion (الخاتمة)', en: 'تلخيص جميع الحجج وتقديم استنتاج منطقي دون إدخال أي أفكار جديدة.' }
+                        ]
+                    }
+                ],
+                sampleParagraph: {
+                    title: 'نموذج تطبيقي محلل بالألوان: فقرة جدلية متوازنة (Balanced Discursive Body Paragraph)',
+                    subtitle: 'استكشف كيف يناقش الكاتب وجهتي النظر المؤيدة والمعارضة في قضية السياحة في المواقع الأثرية باستخدام روابط الاستدراك بألوان مميزة:',
+                    legend: [
+                        { label: 'Topic Sentence (طرح القضية الجدلية)', colorClass: 'hl-neon-yellow' },
+                        { label: 'Arguments For (الحجج المؤيدة)', colorClass: 'hl-mint-green' },
+                        { label: 'Contrast Linker (رابط التناقض والاستدراك)', colorClass: 'hl-hot-pink' },
+                        { label: 'Arguments Against (وجهة النظر المعارضة)', colorClass: 'hl-electric-blue' },
+                        { label: 'Balanced Synthesis (الخلاصة المتوازنة)', colorClass: 'hl-playful-purple' }
+                    ],
+                    html: `<p class="en-block text-sm sm:text-base leading-loose text-slate-800 dark:text-slate-100">
+                        <span class="hl-neon-yellow">Mass tourism at ancient archaeological sites sparks ongoing debate regarding its economic and environmental impact.</span> 
+                        <span class="hl-mint-green">On the one hand, supporters argue that international visitors generate vital revenue that funds monument restoration and creates local jobs.</span> 
+                        <span class="hl-hot-pink">On the other hand,</span> 
+                        <span class="hl-electric-blue">conservationists warn that overcrowding and humidity inside fragile tombs can accelerate structural decay over time.</span> 
+                        <span class="hl-playful-purple">Consequently, balancing economic growth with strict visitor limits is essential to protect historical treasures for future generations.</span>
+                    </p>`
+                },
+                warnings: [
+                    'تجنب إدخال نقاط أو أفكار جديدة تماماً في فقرة الخاتمة (Conclusion).'
+                ],
+                quizzes: [
+                    { q: 'A key feature of a discursive essay is that it ______.', options: ['presents different viewpoints on a topic', 'focuses only on the writer\'s personal opinion', 'tells a story about a personal experience', 'describes a process step by step'], answer: 0, exp: 'جوهر المقال الجدلي هو تناول القضية من وجهات نظر متعددة.' },
+                    { q: 'In the conclusion of a discursive essay, you should avoid ______.', options: ['summarizing main arguments', 'providing a reasoned conclusion', 'introducing new points', 'connecting back to the topic'], answer: 2, exp: 'يُحظر إضافة أفكار جديدة في الخاتمة.' },
+                    { q: 'Which type of discursive essay explores advantages and disadvantages equally without taking a strong side?', options: ['Narrative Diary Entry', 'For and Against Essay', 'Descriptive Poem', 'Personal Letter'], answer: 1, exp: 'مقال المزايا والعيوب (For and Against) يعرض الجانبين بالتساوي دون انحياز.' },
+                    { q: 'Where should the "Thesis Statement" typically be placed in a discursive essay?', options: ['At the end of the introduction paragraph', 'In the middle of the conclusion', 'As the title of the essay', 'In a footnote only'], answer: 0, exp: 'توضع جملة الأطروحة (Thesis Statement) في نهاية فقرة المقدمة لتحديد مسار المقال.' },
+                    { q: 'Which pair of transition phrases is ideal for structuring Body Paragraph 1 and Body Paragraph 2 in a For and Against essay?', options: ['Once upon a time / The end', 'On the one hand / On the other hand', 'Dear Sir / Yours faithfully', 'First of all / Suddenly'], answer: 1, exp: 'عبارتا On the one hand و On the other hand تنظمان الانتقال بين الرأي المؤيد والمعارض.' },
+                    { q: 'What is the main focus of a "Solution-Oriented Discursive Essay"?', options: ['Describing a childhood vacation', 'Analyzing a problem and exploring multiple potential solutions', 'Listing historical dates in chronological order', 'Reviewing a restaurant menu'], answer: 1, exp: 'المقال القائم على الحلول يطرح مشكلة ويناقش حلولاً متنوعة لها.' },
+                    { q: 'In a 4-paragraph discursive essay, what is the primary role of Body Paragraph 2?', options: ['To repeat the introduction word for word', 'To present the opposing viewpoint with supporting reasons', 'To introduce the topic for the first time', 'To list references'], answer: 1, exp: 'الفقرة الثانية في صلب الموضوع تعرض وجهة النظر المقابلة وأسبابها بموضوعية.' },
+                    { q: 'Which tone is most appropriate for a discursive essay?', options: ['Emotional and aggressive', 'Objective, formal, and balanced', 'Slang and overly casual', 'Sarcastic and biased'], answer: 1, exp: 'الأسلوب الرسمي الموضوعي والمتوازن هو سمة المقال الجدلي الناجح.' },
+                    { q: 'In an "Opinion-Based Discursive Essay", when does the writer state their clear stance?', options: ['Only after fairly discussing both supporting and opposing views', 'Never, the writer hides their opinion completely', 'Only in the title', 'By insulting the opposing view'], answer: 0, exp: 'في المقال الجدلي القائم على الرأي، يناقش الكاتب الطرفين بعدالة ثم يحسم موقفه.' },
+                    { q: 'Which phrase effectively signals the concluding paragraph of a discursive essay?', options: ['To sum up,', 'For example,', 'Secondly,', 'In the beginning,'], answer: 0, exp: 'عبارة To sum up أو In conclusion تُستخدم لبدء الخاتمة وتلخيص الحجج.' }
+                ],
+                essays: [
+                    {
+                        isJRE: false,
+                        question: 'Compare the three main types of Discursive Essays (Opinion-Based, For and Against, and Solution-Oriented) in terms of purpose and stance.',
+                        guidance: 'اشرح الفرق في الهدف وموقف الكاتب بين الأنواع الثلاثة للمقال الجدلي.',
+                        modelAnswer: '1. Opinion-Based Discursive Essay: Examines both sides fairly before clearly stating and defending the writer\'s own stance.\n2. For and Against Essay: Presents advantages and disadvantages equally and objectively without taking a personal side until a neutral conclusion.\n3. Solution-Oriented Essay: Introduces a specific societal or global issue and evaluates multiple practical solutions from different perspectives.',
+                        rubric: [
+                            'تحديد خصائص كل نوع من الأنواع الثلاثة بدقة.',
+                            'توضيح الفرق في درجة إظهار رأي الكاتب بينها.'
+                        ]
+                    },
+                    {
+                        isJRE: false,
+                        question: 'Write a 4-sentence balanced discursive paragraph discussing the pros and cons of remote work (working from home), using "On the one hand" and "On the other hand".',
+                        guidance: 'اكتب فقرة جدلية متوازنة من 4 جمل حول مزايا وعيوب العمل عن بُعد.',
+                        modelAnswer: 'Remote work has become a major topic of discussion in modern workplaces. On the one hand, advocates highlight that working from home saves commuting time and offers greater schedule flexibility. On the other hand, critics point out that it can lead to social isolation and weaken team collaboration. Ultimately, adopting a hybrid model may offer the best balance for both employees and organizations.',
+                        rubric: [
+                            'عرض وجهة النظر المؤيدة بعد On the one hand.',
+                            'عرض وجهة النظر المعارضة بعد On the other hand ثم الختام بجملة موازنة.'
+                        ]
+                    },
+                    {
+                        isJRE: true,
+                        question: '[JRE - Urban Planning & Public Consultation Summary] As a Municipal Research Analyst, write a brief 4-sentence objective summary for a town council meeting presenting both sides of turning a historic downtown street into a pedestrian-only zone.',
+                        guidance: 'اكتب ملخصاً موضوعياً لاجتماع مجلس المدينة يعرض وجهتي النظر حول تحويل شارع تاريخي إلى منطقة للمشاة فقط.',
+                        modelAnswer: 'The proposal to convert Old Market Street into a pedestrian-only zone has generated strong feedback from local stakeholders. Supporters emphasize that eliminating vehicle traffic will reduce air pollution, protect historic facades, and create a safer environment for families. Conversely, several shop owners express concern that restricted car access might decrease customer convenience and complicate goods delivery. Therefore, the council should consider designated morning delivery hours before implementing the pedestrian zone.',
+                        rubric: [
+                            'عرض حجج المؤيدين (تقليل التلوث وحماية المباني التاريخية).',
+                            'عرض مخاوف المعارضين (توصيل البضائع ووصول المتسوقين) بأسلوب محايد ومهني.'
+                        ]
+                    }
+                ]
+            },
+
+            // ==================== UNIT 4 ====================
+            {
+                id: 'u4-present-perfect',
+                unit: 'الوحدة الرابعة: The Power of Choice',
+                badge: '4.1 & 4.2 Grammar',
+                title: 'المضارع التام البسيط والتعبيرات الزمنية',
+                enTitle: 'Present Perfect Simple & Time Expressions',
+                icon: 'clock',
+                color: 'rose',
+                summary: 'الربط بين الماضي والحاضر، والتمييز الدقيق بين since و for، واستخدامات been to / gone to / been in.',
+                rules: [
+                    {
+                        heading: '1. التكوين والاستخدامات الأساسية (has / have + P.P.)',
+                        explanation: 'يُستخدم المضارع التام للربط بين حدث في الماضي وتأثيره أو استمراره في الحاضر:',
+                        points: [
+                            { label: 'حدث بدأ في الماضي وما زال مستمراً', en: 'My father has worked for this company for fifteen years.' },
+                            { label: 'حدث انتهى في الماضي وله أثر واضح في الحاضر', en: 'Nada is excited because she has won a competition.' },
+                            { label: 'حدث تم دون تحديد وقت حدوثه (أو للتو)', en: 'He has read that novel three times. / The manager has just signed the contract.' },
+                            { label: 'التجارب السابقة (ever / never) والأحداث المتوقعة (yet)', en: 'Have you ever flown in a helicopter? / The train hasn\'t arrived yet.' }
+                        ]
+                    },
+                    {
+                        heading: '2. الفرق الدقيق بين (since) و (for)',
+                        explanation: 'تحديد نقطة البداية مقابل حساب المدة الكلية:',
+                        points: [
+                            { label: 'since (منذ + نقطة بداية الحدث)', en: 'تُتبع بـ: ساعة (o\'clock)، يوم، شهر، سنة (2020)، مناسبة (his childhood)، أو جملة ماضي بسيط (since he graduated).' },
+                            { label: 'for (لمدة + مقدار المدة الزمنية)', en: 'تُتبع بـ: a day, two years, ages, a long time, the last + مدة زمنية (for the last two years).' },
+                            { label: 'قاعدة since مع جملتين', en: 'المضارع التام (بسيط أو مستمر) + since + الماضي البسيط: We have stayed friends since we graduated.' }
+                        ]
+                    },
+                    {
+                        heading: '3. فروق جوهرية وملاحظات ذكية',
+                        explanation: 'نقاط متكررة في الامتحانات:',
+                        points: [
+                            { label: 'have been to vs. have gone to vs. have been in', en: 'been to (ذهب وعاد)، gone to (ذهب ولم يعد بعد)، been in/at (ذهب واستقر هناك لمدة).' },
+                            { label: 'already في نهاية السؤال', en: 'تُستخدم للتعبير عن الدهشة من سرعة الإنجاز: Have they left already? That\'s surprisingly quick!' },
+                            { label: 'It\'s the (first/second) time + Present Perfect', en: 'It\'s the first time I have spoken in front of a large audience.' },
+                            { label: 'الروابط الزمنية المستقبلية (Once / As soon as / Until)', en: 'يأتي بعدها مضارع تام أو بسيط والطرف الآخر مستقبل: Once you have submitted the application, you will receive an email.' }
+                        ]
+                    }
+                ],
+                warnings: [
+                    'الأحداث التاريخية المعروفة (مثل بناء الرومان للطرق أو كتابة شكسبير للمسرحيات) تأخذ الماضي البسيط حتى لو لم يُذكر التاريخ.',
+                    'إذا وُجدت كلمة (earlier) قبل (this week / this morning) نستخدم الماضي البسيط لأن الفترة انتهت.'
+                ],
+                quizzes: [
+                    { q: 'I haven\'t seen my uncle ______ the last time we were in the village.', options: ['since', 'for', 'ago', 'when'], answer: 0, exp: 'عبارة (the last time + جملة ماضي بسيط) تُعد نقطة بداية الحدث، لذا تأخذ since.' },
+                    { q: 'Where has Rania ______? I can\'t find her anywhere in the office.', options: ['gone', 'been', 'being', 'goes'], answer: 0, exp: 'عدم وجودها في المكتب يعني أنها ذهبت ولم تعد بعد (has gone).' },
+                    { q: 'My grandparents have ______ Luxor for more than thirty years.', options: ['gone to', 'been to', 'been in', 'gone'], answer: 2, exp: 'الإقامة والاستقرار في مكان لمدة زمنية تأخذ (have been in).' },
+                    { q: 'Have you completed all ten exercises ______? That\'s incredibly fast!', options: ['yet', 'never', 'ever', 'already'], answer: 3, exp: 'وجود تعجب من السرعة في نهاية السؤال يتطلب استخدام already بدلاً من yet.' },
+                    { q: 'Which sentence correctly uses "for" or "since"?', options: ['I have lived here since ages.', 'I have lived here for 2011.', 'I have lived here since a long time.', 'I have lived here for the last two years.'], answer: 3, exp: 'عبارة (the last + مدة زمنية) تأخذ for.' },
+                    { q: 'It is the second time Tarek ______ such a challenging decision in his career.', options: ['makes', 'made', 'has made', 'was making'], answer: 2, exp: 'بعد تعبير It is the first/second time نستخدم المضارع التام (has made).' },
+                    { q: 'Once the committee ______ the final candidates, the results will be announced online.', options: ['selected', 'has selected', 'will select', 'had selected'], answer: 1, exp: 'بعد الرابط الزمني المستقبلي Once نستخدم المضارع التام (has selected) والطرف الآخر مستقبل.' },
+                    { q: 'Nabil has been much more confident since he ______ the public speaking course.', options: ['has joined', 'joins', 'joined', 'had joined'], answer: 2, exp: 'الفعل الذي يلي since كأداة ربط يأتي في زمن الماضي البسيط (joined).' },
+                    { q: 'William Shakespeare ______ thirty-seven plays that are still performed worldwide.', options: ['has written', 'wrote', 'writes', 'has been writing'], answer: 1, exp: 'شكسبير شخصية تاريخية رحلت عن عالمنا، لذا نستخدم الماضي البسيط (wrote).' },
+                    { q: 'We haven\'t received any updates from the supplier ______.', options: ['already', 'just', 'yet', 'ever'], answer: 2, exp: 'في نهاية الجملة المنفية نستخدم yet.' }
+                ],
+                essays: [
+                    {
+                        isJRE: false,
+                        question: 'Explain the difference in meaning between these three sentences:\n1) "Dr. Salma has been to London."\n2) "Dr. Salma has gone to London."\n3) "Dr. Salma has been in London for five years."',
+                        guidance: 'وضح الفرق الدلالي بين التراكيب الثلاثة من حيث مكان وجود الشخص الآن ومدة الإقامة.',
+                        modelAnswer: '1) "has been to": She visited London in the past and has already returned.\n2) "has gone to": She traveled to London and is still there (or on her way) now.\n3) "has been in": She moved to London and has been living/staying there continuously for five years.',
+                        rubric: [
+                            'توضيح أن been to تعني الذهاب والعودة.',
+                            'توضيح أن gone to تعني الذهاب وعدم العودة بعد، و been in تعني الاستقرار لمدة.'
+                        ]
+                    },
+                    {
+                        isJRE: false,
+                        question: 'Rewrite the following sentences using the words in brackets:\n1) "The last time I attended a live concert was in 2022." (since)\n2) "This is my first time riding a hot-air balloon." (never)',
+                        guidance: 'أعد صياغة الجملتين في زمن المضارع التام مع استخدام الكلمات المطلوبة بدقة.',
+                        modelAnswer: '1) I haven\'t attended a live concert since 2022.\n2) I have never ridden a hot-air balloon before.',
+                        rubric: [
+                            'استخدام المضارع التام المنفي + since 2022 في الجملة الأولى.',
+                            'استخدام have never ridden... before في الجملة الثانية.'
+                        ]
+                    },
+                    {
+                        isJRE: true,
+                        question: '[JRE - Project Milestone Report] As a Team Lead reporting to stakeholders, write 3 status sentences about your current software launch using "since", "already", and "yet" accurately.',
+                        guidance: 'اكتب 3 جمل تقريرية حول حالة إطلاق مشروع برمجي مستخدماً الكلمات الدالة على المضارع التام بدقة.',
+                        modelAnswer: '1. Our engineering team has worked closely with beta testers since early September.\n2. We have already completed the security audit ahead of schedule.\n3. However, the mobile version has not been released to the public store yet.',
+                        rubric: [
+                            'استخدام since متبوعة بنقطة بداية محددة.',
+                            'استخدام already في الإثبات و yet في نهاية النفي.'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'u4-perfect-cont-past',
+                unit: 'الوحدة الرابعة: The Power of Choice',
+                badge: '4.3 & 4.4 Grammar',
+                title: 'المضارع التام المستمر والمقارنة مع الماضي البسيط',
+                enTitle: 'Present Perfect Continuous vs. Simple & Past Simple',
+                icon: 'activity',
+                color: 'rose',
+                summary: 'التركيز على استمرار الحدث ومدته مقابل اكتمال النتيجة وعدد المرات.',
+                rules: [
+                    {
+                        heading: '1. زمن المضارع التام المستمر (has / have + been + V-ing)',
+                        explanation: 'يُركز على طول مدة استمرار الفعل أو تفسير أثر جسدي/واضح في الحاضر:',
+                        points: [
+                            { label: 'حدث بدأ في الماضي وما زال مستمراً حتى الآن', en: 'It has been raining since 2 o\'clock. / He has been studying all evening.' },
+                            { label: 'تفسير حالة أو أثر ظاهر في الحاضر', en: 'Her hands are covered in flour because she has been baking bread all morning.' },
+                            { label: 'كلمات دالة مميزة', en: 'all + مدة زمنية (all day), for ... now, since ... still, How long.' }
+                        ]
+                    },
+                    {
+                        heading: '2. متى يُمنع استخدام المضارع التام المستمر؟',
+                        explanation: 'في حالتين أساسيتين نعود فوراً إلى المضارع التام البسيط (has/have + P.P.):',
+                        points: [
+                            { label: '1. عند ذكر العدد أو عدد المرات (How many / أرقام)', en: '(✗) I have been drinking 5 cups of coffee. ➔ (✓) I have drunk 5 cups of coffee.' },
+                            { label: '2. مع أفعال الحالة والشعور والملكية (Stative Verbs)', en: '(✗) Mona has been owning a car for five years. ➔ (✓) Mona has owned a car for five years.' }
+                        ]
+                    },
+                    {
+                        heading: '3. المضارع التام مقابل الماضي البسيط',
+                        explanation: 'الفرق الجوهري بين ارتباط الحدث بالحاضر أو انقطاعه تماماً:',
+                        points: [
+                            { label: 'المضارع التام (علاقة بالحاضر)', en: 'Mona has worked at this company for three years. (ما زالت تعمل هناك).' },
+                            { label: 'الماضي البسيط (انتهى وانقطع عن الحاضر)', en: 'Mona worked at that company for three years. (لم تعد تعمل هناك الآن).' }
+                        ]
+                    }
+                ],
+                warnings: [
+                    'الأفعال (live, work, teach, learn, study) يمكن استخدامها في المضارع التام البسيط أو المستمر بنفس المعنى تقريباً عند وجود since أو for.'
+                ],
+                quizzes: [
+                    { q: 'Her hands are covered in flour because she ______ bread all morning.', options: ['has been baking', 'has baked', 'has been backed', 'baked'], answer: 0, exp: 'وجود أثر حالي (الدقيق على يديها) مع كلمة (all morning) يدل على استمرار النشاط (has been baking).' },
+                    { q: 'I ______ three cups of coffee since this morning.', options: ['drank', 'have been drinking', 'have been drunk', 'have drunk'], answer: 3, exp: 'ذُكر عدد الأكواب (three cups)، لذا يُمنع المستمر ونستخدم المضارع التام البسيط (have drunk).' },
+                    { q: 'Mona ______ this apartment for nearly ten years now.', options: ['has been owning', 'has owned', 'has been owned', 'had owned'], answer: 1, exp: 'الفعل own (يمتلك) من أفعال الحالة (Stative verbs) التي لا تُوضع في الأزمنة المستمرة.' },
+                    { q: 'My eyes hurt because I ______ at the computer screen.', options: ['have been looked', 'have been looking', 'had looked', 'looked'], answer: 1, exp: 'تفسير ألم العين في الحاضر بسبب نشاط مستمر (have been looking).' },
+                    { q: 'How many pages of the research paper ______ so far?', options: ['have you been writing', 'have you written', 'did you write', 'were you writing'], answer: 1, exp: 'السؤال بـ How many يركز على الكمية المنجزة، لذا نستخدم المضارع التام البسيط (have you written).' },
+                    { q: 'Dr. Hany ______ at Cairo University for ten years, but now he teaches in Alexandria.', options: ['has worked', 'has been working', 'worked', 'works'], answer: 2, exp: 'الحدث انتهى وانقطع تماماً عن الحاضر (يعمل الآن في الإسكندرية)، فنستخدم الماضي البسيط (worked).' },
+                    { q: 'How long ______ to solve this complex engineering problem?', options: ['have you been trying', 'have you been tried', 'did you tried', 'are you trying'], answer: 0, exp: 'السؤال عن طول المدة المستمرة حتى الآن بـ How long يستخدم معه المضارع التام المستمر.' },
+                    { q: 'We ______ each other since our first day at primary school.', options: ['have been knowing', 'have known', 'knew', 'know'], answer: 1, exp: 'الفعل know من أفعال الإدراك والحالة التي لا تُستخدم في المستمر، فنستخدم have known.' },
+                    { q: 'The athletes are exhausted because they ______ in the heat for two hours.', options: ['have been training', 'trained', 'have been trained', 'are training'], answer: 0, exp: 'تفسير الإرهاق الحالي بسبب نشاط مستمر لمدة ساعتين (have been training).' },
+                    { q: 'I ______ three emails to the support team today, and I am still waiting for a reply.', options: ['have been sending', 'have sent', 'was sending', 'send'], answer: 1, exp: 'ذُكر عدد الرسائل (three emails)، فنستخدم المضارع التام البسيط (have sent).' }
+                ],
+                essays: [
+                    {
+                        isJRE: false,
+                        question: 'Explain why the Present Perfect Continuous cannot be used in the following two sentences, and write the correct form for each:\na) "She has been knowing her best friend since childhood."\nb) "They have been painting four rooms since 8 a.m."',
+                        guidance: 'اذكر السبب النحوي لمنع المضارع التام المستمر في كل جملة ثم صححها.',
+                        modelAnswer: 'a) Correction: "She has known her best friend since childhood."\nReason: "Know" is a stative verb describing a mental state, not a continuous physical action.\n\nb) Correction: "They have painted four rooms since 8 a.m."\nReason: When the specific quantity or number of completed results ("four rooms") is mentioned, the Present Perfect Simple must be used.',
+                        rubric: [
+                            'توضيح قاعدة أفعال الحالة (Stative Verbs) في الجملة الأولى وتصحيحها إلى has known.',
+                            'توضيح قاعدة ذكر العدد/الكمية في الجملة الثانية وتصحيحها إلى have painted.'
+                        ]
+                    },
+                    {
+                        isJRE: false,
+                        question: 'Compare the difference in meaning between:\n1) "Karim has lived in Aswan for six years."\n2) "Karim lived in Aswan for six years."',
+                        guidance: 'اشرح الفرق بين المضارع التام والماضي البسيط مع وجود (for six years).',
+                        modelAnswer: '1) Present Perfect ("has lived"): Karim moved to Aswan six years ago and still lives there today.\n2) Past Simple ("lived"): Karim lived in Aswan for a period of six years in the past, but he no longer lives there now.',
+                        rubric: [
+                            'توضيح أن المضارع التام يربط الإقامة بالحاضر.',
+                            'توضيح أن الماضي البسيط يدل على انتهاء الإقامة وانقطاعها.'
+                        ]
+                    },
+                    {
+                        isJRE: true,
+                        question: '[JRE - IT Helpdesk & Technical Support Log] You are an IT Support Specialist updating a ticket for a client whose server is slow. Write 3 sentences explaining: (1) what your team has been doing all morning, (2) how many diagnostic tests you have completed so far, and (3) what happened yesterday before the issue started.',
+                        guidance: 'اكتب تحديثاً فنياً قصيراً من 3 جمل توظف فيه المضارع التام المستمر، والمضارع التام البسيط (مع العدد)، والماضي البسيط بدقة.',
+                        modelAnswer: '1. Our network engineers have been monitoring your server traffic all morning to identify the bottleneck.\n2. We have already run four diagnostic tests and isolated a corrupted database index.\n3. The slowdown began yesterday evening right after an automated third-party plugin updated.',
+                        rubric: [
+                            'استخدام المضارع التام المستمر (have been monitoring... all morning).',
+                            'استخدام المضارع التام البسيط مع عدد الاختبارات (have run four diagnostic tests).',
+                            'استخدام الماضي البسيط لوصف حدث الأمس المنتهي.'
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'u4-skills',
+                unit: 'الوحدة الرابعة: The Power of Choice',
+                badge: '4.C Study Skills',
+                title: 'التقديم اللغوي (Fronting) ومقال الرأي والتقييم',
+                enTitle: 'Fronting, Opinion Article & Review Writing',
+                icon: 'feather',
+                color: 'emerald',
+                summary: 'أساليب جذب انتباه القارئ بتقديم الظروف، وبناء مقال الرأي (Opinion Article) والمراجعة النقدية (Review).',
+                rules: [
+                    {
+                        heading: '1. التقديم اللغوي (Fronting)',
+                        explanation: 'نقل عبارة الزمان أو المكان أو السبب أو التناقض إلى بداية الجملة لإبرازها، مع وضع فاصلة (,) بعدها وجوباً:',
+                        points: [
+                            { label: 'تقديم الزمان أو المكان (Time / Place)', en: 'Food waste is a problem in Egypt. ➔ In Egypt, food waste is a serious problem.' },
+                            { label: 'تقديم السبب أو النتيجة (Cause / Result)', en: 'As a result of poor storage, bread goes bad quickly. / Because of the heavy rain, I missed my train.' },
+                            { label: 'تقديم التناقض (Contrast)', en: 'Unlike richer countries, Egypt wastes most food at home.' }
+                        ]
+                    },
+                    {
+                        heading: '2. هيكل مقال الرأي (Opinion Article) والتقييم (Review)',
+                        explanation: 'يتشابه الاثنان في التنظيم الاحترافي المكون من 6 عناصر:',
+                        points: [
+                            { label: '1. Headline (عنوان جذاب)', en: 'عنوان قصير يوضح موقفك من البداية.' },
+                            { label: '2. Introduction (المقدمة)', en: 'تقديم الموضوع وكتابة رأيك بوضوح في الجملة الأخيرة.' },
+                            { label: '3 & 4. Body Paragraphs 1 & 2', en: 'السبب الأول + مثال واقعي، ثم السبب الثاني + دليل داعم.' },
+                            { label: '5. Concession (الاعتراف بالرأي الآخر)', en: 'ذكر نقطة منطقية من الجانب المعارض ثم تفنيدها لإثبات قوة رأيك.' },
+                            { label: '6. Conclusion (الخاتمة)', en: 'إعادة صياغة رأيك بكلمات جديدة والختام بجملة قوية.' }
+                        ]
+                    }
+                ],
+                sampleParagraph: {
+                    title: 'نموذج تطبيقي محلل بالألوان: التقديم اللغوي (Fronting) والاعتراف بالرأي الآخر (Concession)',
+                    subtitle: 'تأمل كيف يوظف الكاتب التقديم اللغوي للزمان والمكان والسبب والتناقض مع علامات الترقيم الدقيقة وبناء فقرة التقييم:',
+                    legend: [
+                        { label: 'Fronted Place / Time (تقديم المكان والزمان)', colorClass: 'hl-neon-yellow' },
+                        { label: 'Main Opinion / Claim (الرأي الرئيسي)', colorClass: 'hl-electric-blue' },
+                        { label: 'Fronted Cause / Contrast (تقديم السبب والتناقض)', colorClass: 'hl-hot-pink' },
+                        { label: 'Concession & Refutation (الاعتراف بالرأي الآخر والرد)', colorClass: 'hl-mint-green' },
+                        { label: 'Memorable Ending (الختام القوي)', colorClass: 'hl-playful-purple' }
+                    ],
+                    html: `<p class="en-block text-sm sm:text-base leading-loose text-slate-800 dark:text-slate-100">
+                        <span class="hl-neon-yellow">Across bustling cities worldwide,</span> 
+                        <span class="hl-electric-blue">choosing public transportation over private cars is one of the smartest decisions citizens can make today.</span> 
+                        <span class="hl-hot-pink">As a result of rising fuel costs and daily traffic congestion,</span> <span class="hl-electric-blue">modern metro networks save commuters both money and valuable time.</span> 
+                        <span class="hl-mint-green">Admittedly, crowded trains during peak hours can feel uncomfortable; however, expanding clean transit lines remains far more sustainable than building wider highways.</span> 
+                        <span class="hl-playful-purple">Every daily commute is a choice that shapes the air we breathe tomorrow.</span>
+                    </p>`
+                },
+                warnings: [
+                    'عند استخدام Fronting وتقديم أي عبارة في أول الجملة، يجب وضع فاصلة (,) قبل الفاعل مباشرة: (✓) In advance, we booked the tickets.'
+                ],
+                quizzes: [
+                    { q: 'Which sentence uses Fronting with correct punctuation?', options: ['In advance we booked the tickets.', 'In advance, we booked the tickets.', 'We booked, in advance the tickets.', 'In advance; we booked the tickets.'], answer: 1, exp: 'يجب وضع فاصلة (,) مباشرة بعد العبارة المقدَّمة في بداية الجملة.' },
+                    { q: 'In an Opinion Article or Review, the paragraph that mentions one fair point from the opposing side is called ______.', options: ['Headline', 'Hook', 'Concession', 'Anecdote'], answer: 2, exp: 'الاعتراف بنقطة منطقية من الجانب الآخر ثم الرد عليها يُسمى Concession.' },
+                    { q: 'What is the main stylistic purpose of "Fronting" in writing?', options: ['To hide the main subject of the sentence', 'To emphasize time, place, cause, or contrast at the start of a sentence', 'To make sentences grammatically incomplete', 'To eliminate all commas from a paragraph'], answer: 1, exp: 'التقديم اللغوي (Fronting) يبرز عنصر الزمان أو المكان أو السبب أو التناقض في بداية الجملة.' },
+                    { q: 'Identify the fronted element in: "Unlike single-use plastic bags, reusable cloth totes protect marine life."', options: ['Fronted time phrase', 'Fronted contrast phrase', 'Fronted verb phrase', 'Fronted question'], answer: 1, exp: 'عبارة Unlike single-use plastic bags تُبرز التناقض والمقارنة في بداية الجملة.' },
+                    { q: 'Where should the writer\'s clear opinion statement appear in an Opinion Article?', options: ['At the end of the introduction paragraph', 'Only in the concession paragraph', 'Nowhere in the article', 'In the middle of a random example'], answer: 0, exp: 'تُختتم المقدمة بجملة واضحة تحدد موقف الكاتب ورأيه.' },
+                    { q: 'Why do skilled writers include a "Concession" paragraph before the conclusion of a review or opinion article?', options: ['To admit their entire argument is wrong', 'To show fairness and strengthen their argument by refuting the opposing point', 'To change the topic completely', 'To repeat Body Paragraph 1'], answer: 1, exp: 'الاعتراف بنقطة منطقية من الجانب الآخر ثم الرد عليها يُظهر الموضوعية ويقوي حجة الكاتب.' },
+                    { q: 'Which sentence correctly applies Fronting of a cause?', options: ['Because of heavy rain the match was delayed.', 'Because of heavy rain, the match was delayed.', 'The match was delayed, because of heavy rain.', 'Heavy rain, because of the match was delayed.'], answer: 1, exp: 'تقديم عبارة السبب (Because of heavy rain,) يتطلب وضع فاصلة بعدها قبل الفاعل.' },
+                    { q: 'What is the role of the "Headline" in an Opinion Article or Review?', options: ['To summarize all statistics in 100 words', 'To provide a short, catchy title that signals the writer\'s stance', 'To list the author\'s home address', 'To thank the reader at the end'], answer: 1, exp: 'العنوان الجذاب (Headline) يلفت الانتباه ويوضح اتجاه المقال منذ البداية.' },
+                    { q: 'In a Review, what should Body Paragraphs 1 and 2 contain?', options: ['Two key reasons/criteria supported by specific examples or evidence', 'Only the price of the product', 'A fictional story unrelated to the item', 'A list of grammatical definitions'], answer: 0, exp: 'تتضمن فقرات الجسم سببين رئيسيين مدعومين بأمثلة وأدلة واضحة.' },
+                    { q: 'How should the conclusion of an Opinion Article end?', options: ['With a powerful, memorable final thought after restating the opinion', 'With "To be continued..."', 'With an unfinished sentence', 'With a brand-new unrelated topic'], answer: 0, exp: 'تُختتم الخاتمة بإعادة صياغة الرأي وجملة ختامية قوية تبقى في ذهن القارئ.' }
+                ],
+                essays: [
+                    {
+                        isJRE: false,
+                        question: 'Rewrite each sentence using Fronting to emphasize the underlined/specified phrase, ensuring accurate punctuation:\n1) "Food waste has become a major economic issue in many urban households." (Front the place phrase)\n2) "Many students choose vocational paths because of rapid technological changes." (Front the cause phrase)',
+                        guidance: 'انقل العبارة المحددة إلى بداية الجملة مع وضع فاصلة (,) بعدها مباشرة.',
+                        modelAnswer: '1) In many urban households, food waste has become a major economic issue.\n2) Because of rapid technological changes, many students choose vocational paths.',
+                        rubric: [
+                            'نقل العبارة المكانية وعبارة السبب إلى بداية الجملة.',
+                            'وضع فاصلة (,) مباشرة بعد العبارة المقدَّمة وقبل الفاعل.'
+                        ]
+                    },
+                    {
+                        isJRE: false,
+                        question: 'Write a 3-sentence Concession paragraph for an Opinion Article arguing in favor of renewable energy. Acknowledge one fair concern (e.g., initial installation cost) and then refute it.',
+                        guidance: 'اكتب فقرة Concession قصيرة تعترف بنقطة منطقية للمعارضين ثم تفندها لإثبات قوة رأيك.',
+                        modelAnswer: 'Admittedly, critics point out that installing solar panels and wind turbines requires significant initial financial investment. However, these upfront costs are quickly offset by lower electricity bills and minimal maintenance over time. More importantly, the long-term environmental benefits of clean energy far outweigh the temporary setup expenses.',
+                        rubric: [
+                            'الاعتراف بنقطة منطقية للمعارضين باستخدام Admittedly أو While it is true that.',
+                            'الرد عليها وتفنيدها باستخدام However وإثبات تفوق الرأي الرئيسي.'
+                        ]
+                    },
+                    {
+                        isJRE: true,
+                        question: '[JRE - Product & App Review for a Tech Magazine] As a Tech Reviewer, write a short 4-sentence product review paragraph evaluating a new language-learning app. Include a catchy Headline, one sentence using Fronting, and a Concession point.',
+                        guidance: 'اكتب مراجعة تقييمية قصيرة لتطبيق تعلم لغات لمجلة تقنية تتضمن عنواناً جذاباً، وجملة تستخدم التقديم اللغوي (Fronting)، ونقطة استدراك (Concession).',
+                        modelAnswer: 'Headline: Smart Fluency: A Game-Changer for Busy Language Learners\n\nFor professionals with packed daily schedules, SpeakFlow offers bite-sized interactive lessons that fit easily into a ten-minute coffee break. Its voice-recognition feedback helps users refine their pronunciation with remarkable accuracy. Admittedly, the free version includes occasional advertisements; however, the rich vocabulary exercises make it one of the best learning apps available today.',
+                        rubric: [
+                            'كتابة عنوان جذاب (Headline) يوضح التقييم.',
+                            'توظيف التقديم اللغوي (For professionals with packed daily schedules,) مع الفاصلة.',
+                            'تضمين نقطة اعتراف ورد (Admittedly... however...).'
+                        ]
+                    }
+                ]
+            },
+
+            // ==================== COMPREHENSIVE EXAM ====================
+            {
+                id: 'master-exam',
+                unit: 'التقييم الشامل',
+                badge: 'بنك الأسئلة',
+                title: 'الاختبار التفاعلي الشامل (20 سؤالاً)',
+                enTitle: 'Comprehensive Interactive Assessment (Units 1–4)',
+                icon: 'award',
+                color: 'indigo',
+                type: 'exam'
+            }
+        ];
+
+        // ============================================================================
+        // 2. APPLICATION STATE & STORAGE (Strictly Preserved + Essay State Added)
+        // ============================================================================
+        let state = {
+            currentLessonId: 'dashboard',
+            searchQuery: '',
+            answeredQuestions: JSON.parse(localStorage.getItem('eng_app_progress') || '{}'),
+            essayDrafts: JSON.parse(localStorage.getItem('eng_app_essays') || '{}'),
+            revealedEssays: {},
+            examAnswers: {},
+            examSubmitted: false
+        };
+
+        // Flatten all quiz questions for the Master Exam & Progress calculation
+        const ALL_QUESTIONS = [];
+        CURRICULUM.forEach(item => {
+            if (item.quizzes) {
+                item.quizzes.forEach((q, idx) => {
+                    ALL_QUESTIONS.push({
+                        uid: `${item.id}-q${idx}`,
+                        lessonId: item.id,
+                        lessonTitle: item.title,
+                        badge: item.badge,
+                        ...q
+                    });
+                });
+            }
+        });
+
+        function saveProgress() {
+            localStorage.setItem('eng_app_progress', JSON.stringify(state.answeredQuestions));
+            updateProgressUI();
+        }
+
+        function saveEssayDraft(uid, value) {
+            state.essayDrafts[uid] = value;
+            localStorage.setItem('eng_app_essays', JSON.stringify(state.essayDrafts));
+        }
+
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            const colors = {
+                success: 'bg-emerald-600 text-white',
+                error: 'bg-rose-600 text-white',
+                info: 'bg-slate-800 dark:bg-slate-700 text-white'
+            };
+            toast.className = `${colors[type] || colors.info} px-4 py-3 rounded-xl shadow-lg text-sm font-bold flex items-center gap-2 pointer-events-auto animate-fade-in`;
+            toast.innerHTML = `<i data-lucide="${type === 'success' ? 'check-circle' : type === 'error' ? 'alert-circle' : 'info'}" class="w-4 h-4 shrink-0"></i><span>${message}</span>`;
+            container.appendChild(toast);
+            lucide.createIcons();
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.3s ease';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // ============================================================================
+        // 3. SIDEBAR & NAVIGATION RENDERING
+        // ============================================================================
+        function renderSidebar() {
+            const nav = document.getElementById('sidebar-nav');
+            const query = state.searchQuery.trim().toLowerCase();
+            let html = '';
+            let lastUnit = '';
+
+            const filtered = CURRICULUM.filter(item => {
+                if (!query) return true;
+                return (
+                    item.title.toLowerCase().includes(query) ||
+                    item.enTitle.toLowerCase().includes(query) ||
+                    item.unit.toLowerCase().includes(query) ||
+                    item.badge.toLowerCase().includes(query)
+                );
+            });
+
+            if (filtered.length === 0) {
+                nav.innerHTML = `<div class="text-center py-8 text-xs text-slate-400">لا توجد نتائج مطابقة لبحثك</div>`;
+                return;
+            }
+
+            filtered.forEach(item => {
+                if (item.unit !== lastUnit) {
+                    lastUnit = item.unit;
+                    html += `<div class="px-3 pt-4 pb-1.5 text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500">${item.unit}</div>`;
+                }
+
+                const isActive = state.currentLessonId === item.id;
+                const lessonQuestions = item.quizzes ? item.quizzes.length : 0;
+                const solvedCount = item.quizzes
+                    ? item.quizzes.filter((_, idx) => state.answeredQuestions[`${item.id}-q${idx}`] !== undefined).length
+                    : 0;
+                const isCompleted = lessonQuestions > 0 && solvedCount === lessonQuestions;
+
+                html += `
+                    <button onclick="navigateTo('${item.id}')" class="w-full text-right flex items-center justify-between gap-2.5 px-3 py-2.5 rounded-xl text-sm transition-all ${
+                        isActive
+                            ? 'bg-brand-600 text-white font-bold shadow-md shadow-brand-600/20'
+                            : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/70 font-medium'
+                    }">
+                        <div class="flex items-center gap-2.5 min-w-0">
+                            <i data-lucide="${item.icon}" class="w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-brand-600 dark:text-brand-400'}"></i>
+                            <div class="truncate">
+                                <div class="truncate text-[13px]">${item.title}</div>
+                                <div class="text-[10px] truncate ${isActive ? 'text-brand-100' : 'text-slate-400'} en text-right">${item.badge}</div>
+                            </div>
+                        </div>
+                        ${isCompleted ? `<i data-lucide="check-circle-2" class="w-4 h-4 shrink-0 ${isActive ? 'text-emerald-200' : 'text-emerald-500'}"></i>` : ''}
+                    </button>
+                `;
+            });
+
+            nav.innerHTML = html;
+            lucide.createIcons();
+        }
+
+        function updateProgressUI() {
+            const total = ALL_QUESTIONS.length;
+            const correct = Object.values(state.answeredQuestions).filter(v => v.isCorrect).length;
+            const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
+            document.getElementById('sidebar-progress-text').textContent = `${pct}% (${correct}/${total})`;
+            document.getElementById('sidebar-progress-bar').style.width = `${pct}%`;
+        }
+
+        function navigateTo(lessonId) {
+            state.currentLessonId = lessonId;
+            closeMobileSidebar();
+            renderSidebar();
+            renderMainContent();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ============================================================================
+        // 4. MAIN CONTENT VIEWS (Dashboard, Lesson View, Master Exam)
+        // ============================================================================
+        function renderMainContent() {
+            const container = document.getElementById('main-content');
+            const currentIndex = CURRICULUM.findIndex(item => item.id === state.currentLessonId);
+            const lesson = CURRICULUM[currentIndex] || CURRICULUM[0];
+
+            // Update Top Nav Buttons
+            const prevBtn = document.getElementById('prev-lesson-btn');
+            const nextBtn = document.getElementById('next-lesson-btn');
+            prevBtn.disabled = currentIndex <= 0;
+            nextBtn.disabled = currentIndex >= CURRICULUM.length - 1;
+            prevBtn.onclick = () => currentIndex > 0 && navigateTo(CURRICULUM[currentIndex - 1].id);
+            nextBtn.onclick = () => currentIndex < CURRICULUM.length - 1 && navigateTo(CURRICULUM[currentIndex + 1].id);
+
+            // Update Breadcrumb
+            document.getElementById('breadcrumb').innerHTML = `
+                <button onclick="navigateTo('dashboard')" class="hover:text-brand-600 transition">الرئيسية</button>
+                <i data-lucide="chevron-left" class="w-3.5 h-3.5"></i>
+                <span class="text-slate-400">${lesson.unit}</span>
+                <i data-lucide="chevron-left" class="w-3.5 h-3.5"></i>
+                <span class="text-brand-600 dark:text-brand-400">${lesson.badge}</span>
+            `;
+
+            if (lesson.type === 'dashboard') {
+                container.innerHTML = renderDashboardView();
+            } else if (lesson.type === 'exam') {
+                container.innerHTML = renderMasterExamView();
+            } else {
+                container.innerHTML = renderLessonView(lesson);
+            }
+
+            lucide.createIcons();
+        }
+
+        function renderDashboardView() {
+            const totalQ = ALL_QUESTIONS.length;
+            const solvedQ = Object.keys(state.answeredQuestions).length;
+            const correctQ = Object.values(state.answeredQuestions).filter(x => x.isCorrect).length;
+
+            const units = [
+                {
+                    num: 'Unit 1',
+                    title: 'Living well in a complex world',
+                    ar: 'الحياة المتوازنة في عالم معقد',
+                    desc: 'العبارات الوصفية (Participles)، ضمائر الوصل (Relative Clauses)، الجمل الشرطية وبدائل If، والفقرة التحليلية.',
+                    firstLesson: 'u1-participles',
+                    badgeColor: 'bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300'
+                },
+                {
+                    num: 'Unit 2',
+                    title: 'Leisure Time',
+                    ar: 'وقت الفراغ والهوايات',
+                    desc: 'المصدر واسم الفعل (Gerunds & Infinitives)، الأفعال التي يتغير معناها، المصدر بدون to، وكتابة فقرة الرأي والمذكرات.',
+                    firstLesson: 'u2-gerund-inf',
+                    badgeColor: 'bg-violet-100 text-violet-700 dark:bg-violet-950 dark:text-violet-300'
+                },
+                {
+                    num: 'Unit 3',
+                    title: 'Echoes of the Past',
+                    ar: 'أصداء الماضي والتاريخ',
+                    desc: 'حروف الجر الدالة على المكان والزمان، الفرق بين حرف الجر وأداة الربط، عبارات الاستدراك، والمقال الجدلي.',
+                    firstLesson: 'u3-prepositions',
+                    badgeColor: 'bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300'
+                },
+                {
+                    num: 'Unit 4',
+                    title: 'The Power of Choice',
+                    ar: 'قوة الاختيار واتخاذ القرار',
+                    desc: 'المضارع التام البسيط والمستمر، المقارنة مع الماضي البسيط، التقديم اللغوي (Fronting)، ومقال التقييم (Review).',
+                    firstLesson: 'u4-present-perfect',
+                    badgeColor: 'bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300'
+                }
+            ];
+
+            return `
+                <div class="space-y-8 animate-fade-in">
+                    <!-- Hero Banner -->
+                    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-700 via-indigo-700 to-slate-900 text-white p-6 sm:p-10 shadow-xl">
+                        <div class="relative z-10 max-w-2xl">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-xs font-bold mb-4">
+                                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
+                                الدليل التعليمي التفاعلي الشامل
+                            </span>
+                            <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight mb-3">
+                                أتقن قواعد اللغة الإنجليزية ومهارات الكتابة بأسلوب تفاعلي
+                            </h2>
+                            <p class="text-indigo-100 text-sm sm:text-base leading-relaxed mb-6">
+                                شرح مبسط ومنظم لجميع دروس القواعد (Grammar Focus) ومهارات الدراسة والكتابة (Study Skills) للوحدات من 1 إلى 4، مدعوم بأمثلة مشروحة و10 أسئلة اختيار من متعدد و3 أسئلة مقالية (تتضمن JRE) لكل درس.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <button onclick="navigateTo('u1-participles')" class="px-5 py-3 rounded-xl bg-white text-brand-700 font-extrabold text-sm hover:bg-indigo-50 transition shadow-md flex items-center gap-2">
+                                    <span>ابدأ من الوحدة الأولى</span>
+                                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                                </button>
+                                <button onclick="navigateTo('master-exam')" class="px-5 py-3 rounded-xl bg-brand-600/60 hover:bg-brand-600 border border-white/20 text-white font-bold text-sm transition flex items-center gap-2">
+                                    <i data-lucide="award" class="w-4 h-4 text-amber-300"></i>
+                                    <span>الاختبار الشامل</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="absolute -left-10 -bottom-10 w-64 h-64 rounded-full bg-indigo-500/20 blur-2xl pointer-events-none"></div>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+                                <i data-lucide="book-copy" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-extrabold">12 درساً</div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">120 MCQ + 36 سؤالاً مقالياً</div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                                <i data-lucide="check-circle" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-extrabold">${correctQ} / ${totalQ}</div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">إجابات صحيحة في التدريبات</div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+                                <i data-lucide="zap" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-extrabold">${solvedQ} سؤال</div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">تم التدرب عليه حتى الآن</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Units Cards -->
+                    <div>
+                        <h3 class="text-lg font-extrabold mb-4 flex items-center gap-2">
+                            <i data-lucide="map" class="w-5 h-5 text-brand-600"></i>
+                            خريطة الوحدات الدراسية
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            ${units.map(u => `
+                                <div onclick="navigateTo('${u.firstLesson}')" class="cursor-pointer group bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-brand-500 dark:hover:border-brand-500 shadow-sm card-hover flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center justify-between mb-3">
+                                            <span class="px-3 py-1 rounded-lg text-xs font-extrabold en ${u.badgeColor}">${u.num}</span>
+                                            <i data-lucide="arrow-up-left" class="w-5 h-5 text-slate-400 group-hover:text-brand-600 transition"></i>
+                                        </div>
+                                        <h4 class="font-extrabold text-base en mb-1 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition">${u.title}</h4>
+                                        <p class="text-xs font-bold text-slate-500 dark:text-slate-400 mb-3">${u.ar}</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${u.desc}</p>
+                                    </div>
+                                    <div class="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-bold text-brand-600 dark:text-brand-400">
+                                        <span>استكشف دروس الوحدة</span>
+                                        <span>ابدأ الآن ←</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderLessonView(lesson) {
+            return `
+                <div class="space-y-8 animate-fade-in">
+                    <!-- Lesson Header Card -->
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <div class="flex flex-wrap items-center gap-2 mb-3">
+                            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300 en">${lesson.badge}</span>
+                            <span class="text-xs font-bold text-slate-400">${lesson.unit}</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-2">${lesson.title}</h2>
+                        <p class="text-sm sm:text-base font-semibold text-brand-600 dark:text-brand-400 en mb-4">${lesson.enTitle}</p>
+                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/70 dark:border-slate-700/70 text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed">
+                            <strong class="text-slate-900 dark:text-white">الفكرة المحورية: </strong>${lesson.summary}
+                        </div>
+                    </div>
+
+                    <!-- Grammar / Skill Rules Sections -->
+                    <div class="space-y-6">
+                        ${lesson.rules.map((rule, rIdx) => `
+                            <section class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border border-slate-200 dark:border-slate-800 shadow-sm">
+                                <div class="flex items-start gap-3 mb-3">
+                                    <span class="w-8 h-8 rounded-xl bg-brand-600 text-white font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">${rIdx + 1}</span>
+                                    <div>
+                                        <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">${rule.heading}</h3>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">${rule.explanation}</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 grid grid-cols-1 gap-3">
+                                    ${rule.points.map(pt => `
+                                        <div class="p-4 rounded-2xl bg-slate-50/90 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 hover:border-brand-300 dark:hover:border-brand-700 transition">
+                                            <div class="text-xs font-extrabold text-brand-700 dark:text-brand-300 mb-1.5 flex items-center gap-1.5">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+                                                ${pt.label}
+                                            </div>
+                                            <div class="en-block text-sm sm:text-[15px] font-medium text-slate-800 dark:text-slate-100 leading-relaxed bg-white dark:bg-slate-900/90 px-3.5 py-2.5 rounded-xl border border-slate-100 dark:border-slate-800">
+                                                ${pt.en}
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </section>
+                        `).join('')}
+                    </div>
+
+                    <!-- Playful Color-Coded Sample Paragraph for Skills Lessons -->
+                    ${lesson.sampleParagraph ? `
+                        <section class="bg-gradient-to-br from-fuchsia-50/90 via-amber-50/70 to-sky-50/90 dark:from-slate-900 dark:via-indigo-950/30 dark:to-slate-900 rounded-3xl p-6 sm:p-8 border-2 border-fuchsia-300/70 dark:border-fuchsia-700/40 shadow-md">
+                            <div class="flex items-start gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-500 via-amber-400 to-sky-500 text-white flex items-center justify-center shrink-0 shadow-sm">
+                                    <i data-lucide="palette" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-fuchsia-100 dark:bg-fuchsia-950 text-fuchsia-700 dark:text-fuchsia-300 mb-1">
+                                        تطبيق عملي ممتع • Color-Coded Model
+                                    </span>
+                                    <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">${lesson.sampleParagraph.title}</h3>
+                                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">${lesson.sampleParagraph.subtitle}</p>
+                                </div>
+                            </div>
+
+                            <!-- Interactive Color Legend -->
+                            <div class="flex flex-wrap gap-2 mb-4 p-3.5 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+                                ${lesson.sampleParagraph.legend.map(item => `
+                                    <span class="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700">
+                                        <span class="${item.colorClass} text-[11px]">Aa</span>
+                                        <span class="text-slate-700 dark:text-slate-200">${item.label}</span>
+                                    </span>
+                                `).join('')}
+                            </div>
+
+                            <!-- Highlighted Sample Paragraph Box -->
+                            <div class="p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-950/90 border border-slate-200 dark:border-slate-800 shadow-inner">
+                                ${lesson.sampleParagraph.html}
+                            </div>
+                        </section>
+                    ` : ''}
+
+                    <!-- Important Warnings / Exam Traps -->
+                    ${lesson.warnings && lesson.warnings.length > 0 ? `
+                        <div class="bg-amber-50/90 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 rounded-3xl p-6">
+                            <h4 class="text-base font-extrabold text-amber-900 dark:text-amber-300 flex items-center gap-2 mb-3">
+                                <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600 dark:text-amber-400"></i>
+                                تنبيهات ذهبية وأخطاء شائعة في الامتحانات
+                            </h4>
+                            <ul class="space-y-2.5 text-sm text-amber-950 dark:text-amber-100/90 leading-relaxed">
+                                ${lesson.warnings.map(w => `
+                                    <li class="flex items-start gap-2.5">
+                                        <span class="text-amber-600 font-bold mt-0.5">•</span>
+                                        <span>${w}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+
+                    <!-- Interactive Checkpoint Quiz (10 MCQs per lesson) -->
+                    ${lesson.quizzes && lesson.quizzes.length > 0 ? `
+                        <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border-2 border-brand-500/30 dark:border-brand-500/20 shadow-md">
+                            <div class="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+                                <div>
+                                    <span class="text-xs font-extrabold text-brand-600 dark:text-brand-400 uppercase tracking-wider">Grammar & Skills Checkpoint</span>
+                                    <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mt-0.5">اختبر فهمك للدرس الآن (اختيار من متعدد)</h3>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-bold">
+                                    ${lesson.quizzes.length} أسئلة تفاعلية
+                                </span>
+                            </div>
+
+                            <div class="space-y-6">
+                                ${lesson.quizzes.map((q, qIdx) => renderQuizCard(lesson.id, qIdx, q)).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+
+                    <!-- Interactive Essay Questions Section (3 Essays per lesson including JRE) -->
+                    ${lesson.essays && lesson.essays.length > 0 ? `
+                        <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border-2 border-emerald-500/30 dark:border-emerald-500/20 shadow-md">
+                            <div class="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+                                <div>
+                                    <span class="text-xs font-extrabold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">Critical Thinking & Applied Writing (Includes JRE)</span>
+                                    <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mt-0.5">الأسئلة المقالية والتطبيق المهني (Essay & JRE Questions)</h3>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-bold">
+                                    ${lesson.essays.length} أسئلة مقالية
+                                </span>
+                            </div>
+
+                            <div class="space-y-6">
+                                ${lesson.essays.map((essay, eIdx) => renderEssayCard(lesson.id, eIdx, essay)).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        function renderQuizCard(lessonId, qIdx, q) {
+            const uid = `${lessonId}-q${qIdx}`;
+            const saved = state.answeredQuestions[uid];
+            const letters = ['a', 'b', 'c', 'd'];
+
+            return `
+                <div id="card-${uid}" class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800">
+                    <div class="flex items-start gap-3 mb-4">
+                        <span class="w-7 h-7 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">${qIdx + 1}</span>
+                        <p class="en-block text-base font-semibold text-slate-900 dark:text-white leading-relaxed flex-1">${q.q}</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 en-block">
+                        ${q.options.map((opt, optIdx) => {
+                            let btnClass = 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-brand-500 text-slate-700 dark:text-slate-200';
+                            let iconHtml = '';
+
+                            if (saved !== undefined) {
+                                if (optIdx === q.answer) {
+                                    btnClass = 'bg-emerald-50 dark:bg-emerald-950/60 border-emerald-500 text-emerald-900 dark:text-emerald-200 font-bold';
+                                    iconHtml = `<i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i>`;
+                                } else if (optIdx === saved.selected && !saved.isCorrect) {
+                                    btnClass = 'bg-rose-50 dark:bg-rose-950/60 border-rose-500 text-rose-900 dark:text-rose-200';
+                                    iconHtml = `<i data-lucide="x-circle" class="w-4 h-4 text-rose-600 shrink-0"></i>`;
+                                } else {
+                                    btnClass = 'bg-white/50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 opacity-60';
+                                }
+                            }
+
+                            return `
+                                <button onclick="handleQuizAnswer('${lessonId}', ${qIdx}, ${optIdx})" class="w-full text-left px-4 py-3 rounded-xl border text-sm transition flex items-center justify-between gap-2 ${btnClass}">
+                                    <span><strong class="uppercase mr-1.5 text-brand-600 dark:text-brand-400">${letters[optIdx]})</strong> ${opt}</span>
+                                    ${iconHtml}
+                                </button>
+                            `;
+                        }).join('')}
+                    </div>
+
+                    ${saved !== undefined ? `
+                        <div class="mt-4 p-3.5 rounded-xl text-xs sm:text-sm leading-relaxed flex items-start gap-2.5 ${
+                            saved.isCorrect
+                                ? 'bg-emerald-100/70 dark:bg-emerald-950/50 text-emerald-900 dark:text-emerald-200'
+                                : 'bg-rose-100/70 dark:bg-rose-950/50 text-rose-900 dark:text-rose-200'
+                        }">
+                            <i data-lucide="${saved.isCorrect ? 'sparkles' : 'help-circle'}" class="w-4 h-4 shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong>${saved.isCorrect ? 'إجابة صحيحة! أحسنت:' : 'توضيح الإجابة الصحيحة:'}</strong>
+                                <span>${q.exp}</span>
+                            </div>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        function renderEssayCard(lessonId, eIdx, essay) {
+            const uid = `${lessonId}-e${eIdx}`;
+            const draftValue = state.essayDrafts[uid] || '';
+            const isRevealed = !!state.revealedEssays[uid];
+
+            return `
+                <div id="essay-card-${uid}" class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border ${essay.isJRE ? 'border-amber-400/70 dark:border-amber-600/50' : 'border-slate-200 dark:border-slate-800'}">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-lg bg-emerald-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">${eIdx + 1}</span>
+                            <span class="text-xs font-extrabold text-slate-500 dark:text-slate-400">سؤال مقالي تطبيقي</span>
+                        </div>
+                        ${essay.isJRE ? `
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-sm en">
+                                <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+                                JRE Question
+                            </span>
+                        ` : ''}
+                    </div>
+
+                    <p class="en-block text-sm sm:text-base font-semibold text-slate-900 dark:text-white leading-relaxed whitespace-pre-line mb-3">${essay.question}</p>
+
+                    <div class="p-3 rounded-xl bg-indigo-50/80 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/50 text-xs sm:text-sm text-indigo-900 dark:text-indigo-200 mb-4 flex items-start gap-2">
+                        <i data-lucide="compass" class="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0 mt-0.5"></i>
+                        <span><strong>توجيه الحل: </strong>${essay.guidance}</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="textarea-${uid}" class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-1.5">اكتب إجابتك باللغة الإنجليزية هنا (تُحفظ تلقائياً):</label>
+                        <textarea
+                            id="textarea-${uid}"
+                            rows="4"
+                            oninput="saveEssayDraft('${uid}', this.value)"
+                            placeholder="Write your English response here before checking the model answer..."
+                            class="en-block w-full rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 p-3.5 text-sm text-slate-800 dark:text-slate-100 focus:outline-none transition"
+                        >${draftValue}</textarea>
+                    </div>
+
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <button
+                            onclick="toggleEssayModelAnswer('${lessonId}', ${eIdx})"
+                            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition shadow-sm ${
+                                isRevealed
+                                    ? 'bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100'
+                                    : 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                            }"
+                        >
+                            <i data-lucide="${isRevealed ? 'eye-off' : 'check-circle-2'}" class="w-4 h-4"></i>
+                            <span>${isRevealed ? 'إخفاء الإجابة النموذجية' : 'عرض الإجابة النموذجية ومقارنة إجابتك'}</span>
+                        </button>
+                    </div>
+
+                    ${isRevealed ? `
+                        <div class="mt-4 p-4 sm:p-5 rounded-2xl bg-emerald-50/90 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 space-y-3 animate-fade-in">
+                            <div>
+                                <div class="text-xs font-extrabold text-emerald-800 dark:text-emerald-300 mb-1.5 flex items-center gap-1.5">
+                                    <i data-lucide="award" class="w-4 h-4"></i>
+                                    الإجابة النموذجية المقترحة (Model Answer):
+                                </div>
+                                <div class="en-block p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-emerald-100 dark:border-emerald-900/50 text-sm text-slate-800 dark:text-slate-100 leading-relaxed whitespace-pre-line">
+                                    ${essay.modelAnswer}
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xs font-extrabold text-slate-700 dark:text-slate-300 mb-1.5">معايير التقييم الذاتي (Rubric Checklist):</div>
+                                <ul class="space-y-1 text-xs text-slate-600 dark:text-slate-300">
+                                    ${essay.rubric.map(r => `
+                                        <li class="flex items-start gap-2">
+                                            <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>
+                                            <span>${r}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        function toggleEssayModelAnswer(lessonId, eIdx) {
+            const lesson = CURRICULUM.find(l => l.id === lessonId);
+            if (!lesson || !lesson.essays[eIdx]) return;
+            const uid = `${lessonId}-e${eIdx}`;
+            state.revealedEssays[uid] = !state.revealedEssays[uid];
+
+            const cardEl = document.getElementById(`essay-card-${uid}`);
+            if (cardEl) {
+                cardEl.outerHTML = renderEssayCard(lessonId, eIdx, lesson.essays[eIdx]);
+                lucide.createIcons();
+            }
+        }
+
+        function handleQuizAnswer(lessonId, qIdx, selectedIdx) {
+            const lesson = CURRICULUM.find(l => l.id === lessonId);
+            if (!lesson || !lesson.quizzes[qIdx]) return;
+            const q = lesson.quizzes[qIdx];
+            const uid = `${lessonId}-q${qIdx}`;
+            const isCorrect = selectedIdx === q.answer;
+
+            state.answeredQuestions[uid] = {
+                selected: selectedIdx,
+                isCorrect
+            };
+            saveProgress();
+            renderSidebar();
+
+            // Re-render only that specific card for smooth UX
+            const cardEl = document.getElementById(`card-${uid}`);
+            if (cardEl) {
+                cardEl.outerHTML = renderQuizCard(lessonId, qIdx, q);
+                lucide.createIcons();
+            }
+
+            if (isCorrect) {
+                showToast('إجابة ممتازة! تم تسجيل تقدمك.', 'success');
+            }
+        }
+
+        // ============================================================================
+        // 5. MASTER EXAM VIEW (20 Questions across all 4 Units)
+        // ============================================================================
+        function renderMasterExamView() {
+            const examQuestions = ALL_QUESTIONS.slice(0, 20);
+            const letters = ['a', 'b', 'c', 'd'];
+            let score = 0;
+            if (state.examSubmitted) {
+                examQuestions.forEach((q, i) => {
+                    if (state.examAnswers[i] === q.answer) score++;
+                });
+            }
+
+            return `
+                <div class="space-y-6 animate-fade-in">
+                    <div class="bg-gradient-to-l from-indigo-600 to-brand-700 text-white rounded-3xl p-6 sm:p-8 shadow-lg">
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <div>
+                                <span class="px-3 py-1 rounded-full bg-white/15 text-xs font-bold">التقييم النهائي الشامل</span>
+                                <h2 class="text-2xl sm:text-3xl font-extrabold mt-2">اختبار الوحدات الأربع (20 سؤالاً)</h2>
+                                <p class="text-indigo-100 text-sm mt-1">اختر الإجابة الصحيحة لكل سؤال ثم اضغط على "تصحيح الاختبار" لعرض نتيجتك التفصيلية.</p>
+                            </div>
+                            ${state.examSubmitted ? `
+                                <div class="bg-white text-slate-900 px-6 py-4 rounded-2xl text-center shadow-md">
+                                    <div class="text-xs font-bold text-slate-500">النتيجة النهائية</div>
+                                    <div class="text-3xl font-extrabold text-brand-600">${score} / ${examQuestions.length}</div>
+                                    <div class="text-xs font-bold text-emerald-600 mt-0.5">${Math.round((score / examQuestions.length) * 100)}%</div>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+
+                    <div class="space-y-5">
+                        ${examQuestions.map((q, idx) => {
+                            const userChoice = state.examAnswers[idx];
+                            return `
+                                <div class="bg-white dark:bg-slate-900 p-5 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                                    <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                                        <span class="font-bold text-brand-600 dark:text-brand-400">${q.lessonTitle}</span>
+                                        <span class="en">${q.badge}</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 mb-4">
+                                        <span class="w-7 h-7 rounded-lg bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300 font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">${idx + 1}</span>
+                                        <p class="en-block text-base font-semibold text-slate-900 dark:text-white flex-1">${q.q}</p>
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 en-block">
+                                        ${q.options.map((opt, optIdx) => {
+                                            let cls = 'bg-slate-50 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700 hover:border-brand-500';
+                                            if (!state.examSubmitted && userChoice === optIdx) {
+                                                cls = 'bg-brand-50 dark:bg-brand-950/70 border-brand-600 text-brand-900 dark:text-brand-200 font-bold ring-2 ring-brand-500/20';
+                                            } else if (state.examSubmitted) {
+                                                if (optIdx === q.answer) {
+                                                    cls = 'bg-emerald-50 dark:bg-emerald-950/60 border-emerald-500 text-emerald-900 dark:text-emerald-200 font-bold';
+                                                } else if (userChoice === optIdx && userChoice !== q.answer) {
+                                                    cls = 'bg-rose-50 dark:bg-rose-950/60 border-rose-500 text-rose-900 dark:text-rose-200';
+                                                } else {
+                                                    cls = 'opacity-50 border-slate-200 dark:border-slate-800';
+                                                }
+                                            }
+                                            return `
+                                                <button ${state.examSubmitted ? 'disabled' : ''} onclick="selectExamOption(${idx}, ${optIdx})" class="w-full text-left px-4 py-3 rounded-xl border text-sm transition ${cls}">
+                                                    <strong class="uppercase mr-1.5 text-brand-600 dark:text-brand-400">${letters[optIdx]})</strong> ${opt}
+                                                </button>
+                                            `;
+                                        }).join('')}
+                                    </div>
+                                    ${state.examSubmitted ? `
+                                        <div class="mt-3 p-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                                            <strong>التفسير: </strong>${q.exp}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+
+                    <div class="flex flex-wrap items-center justify-center gap-4 pt-4 pb-10">
+                        ${!state.examSubmitted ? `
+                            <button onclick="submitMasterExam(${examQuestions.length})" class="px-8 py-3.5 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-base shadow-lg shadow-brand-600/25 transition flex items-center gap-2">
+                                <i data-lucide="check-square" class="w-5 h-5"></i>
+                                <span>تصحيح الاختبار وعرض النتيجة</span>
+                            </button>
+                        ` : `
+                            <button onclick="resetMasterExam()" class="px-8 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-900 dark:bg-slate-700 text-white font-extrabold text-base shadow-lg transition flex items-center gap-2">
+                                <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
+                                <span>إعادة المحاولة من جديد</span>
+                            </button>
+                        `}
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectExamOption(qIdx, optIdx) {
+            if (state.examSubmitted) return;
+            state.examAnswers[qIdx] = optIdx;
+            renderMainContent();
+        }
+
+        function submitMasterExam(total) {
+            const answeredCount = Object.keys(state.examAnswers).length;
+            if (answeredCount < total) {
+                showToast(`يرجى الإجابة على جميع الأسئلة أولاً (${answeredCount} من ${total})`, 'error');
+                return;
+            }
+            state.examSubmitted = true;
+            renderMainContent();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            showToast('تم تصحيح الاختبار بنجاح!', 'success');
+        }
+
+        function resetMasterExam() {
+            state.examAnswers = {};
+            state.examSubmitted = false;
+            renderMainContent();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ============================================================================
+        // 6. MOBILE SIDEBAR, THEME & EVENT LISTENERS
+        // ============================================================================
+        const sidebar = document.getElementById('sidebar');
+        const backdrop = document.getElementById('sidebar-backdrop');
+
+        function openMobileSidebar() {
+            sidebar.classList.remove('translate-x-full');
+            backdrop.classList.remove('hidden');
+        }
+
+        function closeMobileSidebar() {
+            sidebar.classList.add('translate-x-full');
+            backdrop.classList.add('hidden');
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', openMobileSidebar);
+        document.getElementById('close-sidebar-btn').addEventListener('click', closeMobileSidebar);
+        backdrop.addEventListener('click', closeMobileSidebar);
+
+        // Search Filter
+        document.getElementById('sidebar-search').addEventListener('input', (e) => {
+            state.searchQuery = e.target.value;
+            renderSidebar();
+        });
+
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.classList.toggle('dark');
+            localStorage.setItem('eng_app_theme', isDark ? 'dark' : 'light');
+        }
+
+        if (localStorage.getItem('eng_app_theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+
+        document.getElementById('theme-toggle-desktop').addEventListener('click', toggleTheme);
+        document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
+
+        // Reset Progress
+        document.getElementById('reset-progress-btn').addEventListener('click', () => {
+            state.answeredQuestions = {};
+            state.essayDrafts = {};
+            state.revealedEssays = {};
+            localStorage.removeItem('eng_app_essays');
+            saveProgress();
+            renderSidebar();
+            renderMainContent();
+            showToast('تم إعادة ضبط سجل التقدم بنجاح', 'info');
+        });
+
+        // Initial Boot
+        window.addEventListener('DOMContentLoaded', () => {
+            updateProgressUI();
+            renderSidebar();
+            renderMainContent();
+        });
+    </script>
+</body>
+</html>
